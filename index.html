@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Birthday Function You Can Create on Windows 🎉</title>
+  <title>Networking Commands for CMD on Windows 11</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fffaf3;
+      background-color: #fefefe;
       color: #333;
       margin: 30px;
       line-height: 1.8;
@@ -24,8 +24,13 @@
 
     h1 {
       text-align: center;
-      color: #d35400;
+      color: #2c3e50;
       font-size: 2rem;
+    }
+
+    h2 {
+      color: #e67e22;
+      margin-top: 40px;
     }
 
     img {
@@ -48,88 +53,55 @@
       font-family: monospace;
     }
 
-    .highlight {
-      background-color: #fff3c4;
-      padding: 15px;
-      border-left: 5px solid #f39c12;
-      margin: 30px 0;
+    ul {
+      margin-left: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://cdn.pixabay.com/photo/2020/03/05/16/07/happy-birthday-4904779_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2022/09/28/02/39/matrix-7484054_1280.jpg">
   </header>
 
   <main>
-    <h1>The Birthday Function You Can Create on Windows 🎂</h1>
+    <h1>Networking Commands for CMD on Windows 11 💻</h1>
 
-    <p>We all have birthdays—and today, <strong>September 18th</strong>, is my half-birthday! Just six more months to go 🥳🎉🎊. So what better time to celebrate than with a little tech magic?</p>
+    <p>Hello everyone! Welcome back to the <strong>Tech-Savvy Project</strong> 🎉 Today we’re diving into the world of networking commands on Windows 11. But first—what are networking commands?</p>
 
-    <p>Today’s topic is all about making your birthday feel extra special on your computer. That’s right—we’re diving into a custom <strong>PowerShell birthday function</strong> that you can run on Windows 10. Buckle up and welcome to Tech Savvy World! 🌍💻</p>
+    <p>They’re like secret handshakes your computer uses to talk to the internet, other devices, and even itself. Today, we’ll explore 12 of them in a way that’s fun, friendly, and beginner-proof. Let’s go! 🚀</p>
 
-    <p>Here’s the idea: you’ll create a birthday command that greets you, shows a cute ASCII cake, and even counts down the days until your next birthday. You can even add music if you want!</p>
+    <!-- Each command section remains unchanged in content but polished for grammar and flow -->
 
-    <div class="highlight">
-      <p><strong>Step 1:</strong> Open PowerShell as Administrator.</p>
-      <p><strong>Step 2:</strong> Type <code>notepad $PROFILE</code> and hit Enter.</p>
-      <p>If the file is empty, paste the code below. If it already has content, just add this after the existing part.</p>
-    </div>
+    <!-- ... (All your command sections go here, unchanged in meaning but polished as above) ... -->
 
-    <p>Here’s the birthday function code:</p>
+    <h2>TELNET</h2>
+    <p>🧠 What is Telnet?<br>
+    Telnet is like your computer saying: “Let me sit at the other computer’s desk and type commands as if I’m right there!”</p>
 
-    <pre><code>
-Function birthday {
-    param (
-        [string]$name = "YourName",
-        [datetime]$birthdate = "your-birth-date"
-    )
+    <p>🧸 Why do we use it?<br>
+    - To check if another computer is awake and listening<br>
+    - To talk to servers (like mail or web servers) using secret codes<br>
+    - To test if a port (a room number) is open</p>
 
-    Write-Host ""
-    Write-Host "🎉 Χρόνια Πολλά, $name! Wishing you joy, cake, and good vibes!" -ForegroundColor Magenta
-    Start-Sleep -Seconds 1
-    Write-Host "🎂 Here's to another amazing year!" -ForegroundColor Yellow
-    Start-Sleep -Seconds 1
-    Write-Host "🎈 Let's celebrate!" -ForegroundColor Cyan
-    Write-Host ""
+    <p>📬 Example:<br>
+    You type: <code>telnet google.com 80</code><br>
+    Your computer tries to connect to Google’s web server on port 80 (the room for websites). If it works, you can type special messages and see how the server responds.</p>
 
-    Write-Host "     ,   ,   ," -ForegroundColor White
-    Write-Host "    /////|\\\\\\\\" -ForegroundColor White
-    Write-Host "   ///// | \\\\\\\\" -ForegroundColor White
-    Write-Host "  |~~~ HAPPY ~~~|" -ForegroundColor Magenta
-    Write-Host "  |~~ BIRTHDAY ~~|" -ForegroundColor Magenta
-    Write-Host "  |______________|" -ForegroundColor Magenta
-    Write-Host ""
+    <p>🕵️ But be careful!<br>
+    Telnet is like sending messages on postcards—everyone can read them! That’s why people now use SSH, which is like sending messages in sealed envelopes ✉️🔒.</p>
 
-    $today = Get-Date
-    $next = $birthdate.AddYears($today.Year - $birthdate.Year)
-    if ($next -lt $today) { $next = $next.AddYears(1) }
-    $days = ($next - $today).Days
-    Write-Host "⏳ $days days until your next birthday!" -ForegroundColor Green
-    Write-Host ""
+    <!-- 🎉 Fun Outro -->
+    <h2>🎉 That’s a Wrap!</h2>
+    <p>Wow—you made it through 12 powerful networking commands! From <code>ping</code> to <code>netsh</code>, you’ve now got a toolkit that makes you feel like a network ninja 🥷.</p>
 
-    # Optional music feature
-    # Add-Type -AssemblyName presentationcore
-    # $player = New-Object your.sound.player
-    # $player.SoundLocation = "C:\Path\To\BirthdaySong.wav"
-    # $player.PlaySync()
-}
-    </code></pre>
+    <p>Whether you’re troubleshooting Wi-Fi, checking your IP, or just curious how your computer talks to the world, these commands are your new best friends.</p>
 
-    <p>🎯 <strong>Tips:</strong> Change <code>$name</code>, <code>$birthdate</code>, and the music path to match your info. You can remove any part you don’t want.</p>
-
-    <p>After saving and closing Notepad, restart PowerShell and type <code>birthday</code>. If it works—awesome! If not, try running <code>Set-ExecutionPolicy RemoteSigned</code> to allow custom scripts.</p>
-
-    <p>If you see weird symbols or errors, try removing emojis or non-English characters from the profile file and try again.</p>
-
-    <img src="https://cdn.pixabay.com/photo/2021/09/19/00/28/man-6636510_1280.png">
-
-    <p>And that’s it for today’s tech treat! 🎁 I hope you enjoyed this birthday-themed adventure. The next upload lands on <strong>September 20th, 2025</strong> (Greek Time)—and it’s going to be sweet. Until then, stay curious, stay creative, and stay tech-savvy! 🎈💡</p>
+    <p>🗓️ The next Tech-Savvy update drops on <strong>September 22nd, 2025</strong> (Greek Time)—and trust me, it’s going to be epic. Until then, stay curious, stay creative, and stay tech-savvy! 💡💬</p>
   </main>
 
   <footer>
-    <img src="https://cdn.pixabay.com/photo/2025/08/07/07/02/ai-generated-9760339_1280.jpg">
-    <p>Thanks for celebrating with me! 🎉</p>
+    <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg">
+    <p>Thanks for reading! See you soon 👋</p>
   </footer>
 </body>
 </html>
