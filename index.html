@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Networking Commands for CMD on Windows 11</title>
+  <title>Lock Your Folder with a Secret Password Using CMD</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -53,67 +53,85 @@
       font-family: monospace;
     }
 
-    ul {
-      margin-left: 20px;
+    .highlight {
+      background-color: #fff3c4;
+      padding: 15px;
+      border-left: 5px solid #f39c12;
+      margin: 30px 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://cdn.pixabay.com/photo/2022/09/28/02/39/matrix-7484054_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2015/10/09/16/43/castle-979597_1280.jpg">
   </header>
 
   <main>
-    <h1>Networking Commands for CMD on Windows 11 💻</h1>
+    <h1>Lock Your Folder with a Secret Password Using CMD 🏰</h1>
 
-    <p>Hello everyone! Welcome back to the <strong>Tech-Savvy Project</strong> 🎉 Today we’re diving into the world of networking commands on Windows 11. These are the tools your computer uses to talk to the internet, other devices, and even itself. Let’s explore 12 of them in a way that’s fun, friendly, and beginner-proof. Ready? Let’s go! 🚀</p>
+    <p>Welcome back to the <strong>Tech-Savvy Project</strong>,Today we’re turning your Windows computer into a digital fortress. Ever wanted to hide a folder and protect it with a password? You can do it with just a few lines of code in CMD using a batch file. Let’s build your own secret vault! 🔐</p>
 
-    <h2>1. NETSTAT</h2>
-    <p>Shows active connections and listening ports. Think of it as your computer’s chat log with other devices.</p>
+    <h2>🧠 What You’ll Learn</h2>
+    <p>We’ll create a folder that disappears when locked and only reappears when you enter the correct password. It’s like a treasure chest that opens only with the magic word!</p>
 
-    <h2>2. NSLOOKUP</h2>
-    <p>Asks the DNS system: “Where does google.com live?” and gets back an IP address. Like looking up someone’s address in a phone book.</p>
+    <h2>📦 Step-by-Step Instructions</h2>
+    <p>1. Open Notepad<br>
+    2. Paste the code below<br>
+    3. Save the file as <code>locker.bat</code> (make sure it’s not <code>locker.bat.txt</code>)</p>
 
-    <h2>3. PING</h2>
-    <p>Plays Marco Polo with another computer. Sends a signal and waits for a reply to check if the other device is reachable.</p>
+    <h2>🔐 The Magic Code</h2>
+    <pre><code>
+@echo off
+title Folder Locker
+if EXIST "Private" goto LOCK
+if NOT EXIST Locker goto MDLOCKER
+:CONFIRM
+echo Are you sure you want to lock the folder? (Y/N)
+set /p "cho=&gt;"
+if %cho%==Y goto LOCK
+if %cho%==y goto LOCK
+if %cho%==N goto END
+if %cho%==n goto END
+goto CONFIRM
+:LOCK
+ren Private "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
+attrib +h +s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
+echo Folder locked
+goto End
+:UNLOCK
+echo Enter password to unlock folder:
+set /p "pass=&gt;"
+if NOT %pass%==YourPasswordHere goto FAIL
+attrib -h -s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
+ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" Private
+echo Folder unlocked successfully!
+goto End
+:FAIL
+echo Wrong password!
+goto end
+:MDLOCKER
+md Private
+echo Private folder created successfully
+goto End
+:End
+    </code></pre>
 
-    <h2>4. TRACERT</h2>
-    <p>Shows the path your message takes to reach its destination. Like tracking a letter through every post office it visits.</p>
+    <p>🧸 Replace <code>YourPasswordHere</code> with your actual password. Save and double-click the file to run it. The first time, it creates a folder called <strong>Private</strong>. Run it again to lock or unlock the folder!</p>
 
-    <h2>5. IPCONFIG</h2>
-    <p>Displays your computer’s IP address, subnet mask, and gateway. It’s like your digital home address and how you get outside.</p>
+    <h2>⚠️ Tips & Warnings</h2>
+    <ul>
+      <li>Don’t forget your password—there’s no recovery!</li>
+      <li>This is a basic trick, not military-grade encryption.</li>
+      <li>Use it for fun or light privacy, not for sensitive data.</li>
+    </ul>
+    <p>And there you have it—your very own secret vault, built with CMD magic! Whether you’re hiding birthday plans, secret scripts, or just want to feel like a digital wizard, this trick adds a fun layer of mystery to your desktop.</p>
 
-    <h2>6. HOSTNAME</h2>
-    <p>Reveals your computer’s name tag. Useful for identifying devices on a network.</p>
+    <p>🗓️ The next Tech-Savvy update drops on <strong>September 24th, 2025</strong> (Greek Time). Until then, keep coding, keep exploring, and keep locking those treasures! 🧙‍♂️💾</p>
 
-    <h2>7. ARP</h2>
-    <p>Matches IP addresses to MAC addresses. Like asking, “Who is 192.168.1.5?” and getting a face to go with the name.</p>
-
-    <h2>8. GETMAC</h2>
-    <p>Shows your computer’s MAC address—its unique bracelet number on the network.</p>
-
-    <h2>9. NETSH</h2>
-    <p>A powerful tool to manage network settings. You can reset Wi-Fi, change IPs, and more. Like admin mode in a video game!</p>
-
-    <h2>10. PATHPING</h2>
-    <p>Combines ping and tracert. Checks each stop along the way and tells you if any are slow or dropping messages.</p>
-
-    <h2>11. SYSTEMINFO</h2>
-    <p>Displays detailed info about your computer—OS version, memory, processor, and more. Like reading your PC’s resume.</p>
-
-    <h2>12. TELNET</h2>
-    <p>Connects to another computer and lets you type commands as if you’re sitting at its keyboard. Just be careful—it’s not secure like SSH!</p>
-
-    <h2>🎉 That’s a Wrap!</h2>
-    <p>Wow—you made it through 12 powerful networking commands! From <code>ping</code> to <code>telnet</code>, you’ve now got a toolkit that makes you feel like a network ninja 🥷.</p>
-
-    <p>Whether you’re troubleshooting Wi-Fi, checking your IP, or just curious how your computer talks to the world, these commands are your new best friends.</p>
-
-    <p>🗓️ The next Tech-Savvy update drops on <strong>September 22nd, 2025</strong> (Greek Time)—and trust me, it’s going to be epic. Until then, stay curious, stay creative, and stay tech-savvy! 💡💬</p>
+    <img src="https://cdn.pixabay.com/photo/2014/12/16/12/59/login-570317_1280.jpg">
   </main>
 
   <footer>
-    <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg">
     <p>Thanks for reading! See you soon 👋</p>
   </footer>
 </body>
