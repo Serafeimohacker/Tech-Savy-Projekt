@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lock Your Folder with a Secret Password Using CMD</title>
+  <title>Build Your Own Voice Assistant with PowerShell</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -63,72 +63,63 @@
 </head>
 <body>
   <header>
-    <img src="https://cdn.pixabay.com/photo/2015/10/09/16/43/castle-979597_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2024/03/05/13/13/robot-8614567_1280.png">
   </header>
 
   <main>
-    <h1>Lock Your Folder with a Secret Password Using CMD 🏰</h1>
+    <h1>Build Your Own Voice Assistant with PowerShell 🎙️</h1>
 
-    <p>Welcome back to the <strong>Tech-Savvy Project</strong>,Today we’re turning your Windows computer into a digital fortress. Ever wanted to hide a folder and protect it with a password? You can do it with just a few lines of code in CMD using a batch file. Let’s build your own secret vault! 🔐</p>
+    <p>Welcome back to <strong>techsavvyp.com</strong>!Today we’re doing something futuristic and fun: creating a mini voice assistant using PowerShell. That’s right—your computer will talk to you, greet you, and even deliver custom messages. No downloads, no AI models—just pure PowerShell magic!</p>
 
     <h2>🧠 What You’ll Learn</h2>
-    <p>We’ll create a folder that disappears when locked and only reappears when you enter the correct password. It’s like a treasure chest that opens only with the magic word!</p>
+    <p>We’ll use the built-in <code>System.Speech</code> library to make your computer speak. You’ll be able to customize greetings, reminders, or even jokes. It’s perfect for kids, coders, or anyone who wants their PC to feel a little more alive.</p>
 
-    <h2>📦 Step-by-Step Instructions</h2>
-    <p>1. Open Notepad<br>
-    2. Paste the code below<br>
-    3. Save the file as <code>locker.bat</code> (make sure it’s not <code>locker.bat.txt</code>)</p>
+    <h2>🛠️ Step-by-Step Guide</h2>
+    <p><strong>Step 1:</strong> Open PowerShell (you don’t need admin mode for this one).</p>
+    <p><strong>Step 2:</strong> Paste the code below into the PowerShell window.</p>
 
-    <h2>🔐 The Magic Code</h2>
-    <pre><code>
-@echo off
-title Folder Locker
-if EXIST "Private" goto LOCK
-if NOT EXIST Locker goto MDLOCKER
-:CONFIRM
-echo Are you sure you want to lock the folder? (Y/N)
-set /p "cho=&gt;"
-if %cho%==Y goto LOCK
-if %cho%==y goto LOCK
-if %cho%==N goto END
-if %cho%==n goto END
-goto CONFIRM
-:LOCK
-ren Private "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
-attrib +h +s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
-echo Folder locked
-goto End
-:UNLOCK
-echo Enter password to unlock folder:
-set /p "pass=&gt;"
-if NOT %pass%==YourPasswordHere goto FAIL
-attrib -h -s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
-ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" Private
-echo Folder unlocked successfully!
-goto End
-:FAIL
-echo Wrong password!
-goto end
-:MDLOCKER
-md Private
-echo Private folder created successfully
-goto End
-:End
-    </code></pre>
+But you might be wondering:
+“How do I make it greet me every time I open PowerShell?”
+Let’s turn that one-time script into a permanent companion by saving it to your PowerShell profile.
+</p>
 
-    <p>🧸 Replace <code>YourPasswordHere</code> with your actual password. Save and double-click the file to run it. The first time, it creates a folder called <strong>Private</strong>. Run it again to lock or unlock the folder!</p>
+<h2>🧠 Step-by-Step Guide</h2>
+    <p>1. 	Open PowerShell (regular mode is fine).
+2. 	Type this command and press Enter:
+"notepad $PROFILE"
+3. 	If the file doesn’t exist, PowerShell will ask to create it—click Yes.</p>
 
-    <h2>⚠️ Tips & Warnings</h2>
-    <ul>
-      <li>Don’t forget your password—there’s no recovery!</li>
-      <li>This is a basic trick, not military-grade encryption.</li>
-      <li>Use it for fun or light privacy, not for sensitive data.</li>
-    </ul>
-    <p>And there you have it—your very own secret vault, built with CMD magic! Whether you’re hiding birthday plans, secret scripts, or just want to feel like a digital wizard, this trick adds a fun layer of mystery to your desktop.</p>
+<p>
+4.      If your proile is empty just paste the code,save and close notepad,if it's not empty paste the code below the already existing code:
 
-    <p>🗓️ The next Tech-Savvy update drops on <strong>September 24th, 2025</strong> (Greek Time). Until then, keep coding, keep exploring, and keep locking those treasures! 🧙‍♂️💾</p>
+<pre><code>Add-Type -AssemblyName System.Speech
+$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
 
-    <img src="https://cdn.pixabay.com/photo/2014/12/16/12/59/login-570317_1280.jpg">
+$speak.Speak("Welcome back to techsavvyp dot com.")
+$speak.Speak("Your next update is scheduled for September 26th, 2025.")
+$speak.Speak("Stay curious, stay creative, and stay tech savvy!")</code></pre>
+
+<p>Just change the <code>$speak.Speak()</code> lines to match your theme!
+If you want,you can add some conditions like:
+
+<pre><code>
+if ((Get-Date).DayOfWeek -eq 'Friday') {
+    $speak.Speak("Happy Friday! Time to wrap up the week.")
+}
+</code></pr>
+</p>
+
+    <h2>🧸 Why It’s Useful</h2>
+    <p>This is a great way to learn about PowerShell objects, libraries, and automation. Plus, it’s fun and easy to share with friends or family. You can even schedule it to run at startup for a daily greeting!</p>
+
+    <h2>🎉 Outro</h2>
+    <p>And there you have it—your very own voice assistant, built with PowerShell and a sprinkle of imagination. Whether you’re coding, learning, or just having fun, this project brings your computer to life in a whole new way.</p>
+
+    <p>🗓️ The next Tech Savvy update drops on <strong>September 26th, 2025</strong> (Greek Time). Until then, keep exploring, keep creating, and as always...Stay Tech Savvy!</p>
+
+    <p><strong>Stay Tech Savvy! 💡💬</strong></p>
+
+    <img src="https://cdn.pixabay.com/photo/2019/03/26/10/46/artificial-4082314_1280.jpg">
   </main>
 
   <footer>
