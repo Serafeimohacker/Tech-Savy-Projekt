@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Build Your Own Voice Assistant with PowerShell</title>
+  <title>Mood-Changing Command Prompt</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -63,63 +63,102 @@
 </head>
 <body>
   <header>
-    <img src="https://cdn.pixabay.com/photo/2024/03/05/13/13/robot-8614567_1280.png">
+    <img src="https://cdn.pixabay.com/photo/2015/11/10/08/10/background-1036447_1280.jpg">
   </header>
 
   <main>
-    <h1>Build Your Own Voice Assistant with PowerShell 🎙️</h1>
+    <h1>Mood-Changing Command Prompt 🎨</h1>
 
-    <p>Welcome back to <strong>techsavvyp.com</strong>!Today we’re doing something futuristic and fun: creating a mini voice assistant using PowerShell. That’s right—your computer will talk to you, greet you, and even deliver custom messages. No downloads, no AI models—just pure PowerShell magic!</p>
+    <p>Welcome back to the <strong>Tech-Savvy Projekt</strong>! Today we’re adding a splash of personality to your Command Prompt. What if your terminal could reflect your mood—chill, focused, creative, or chaotic? With a few lines of code, you can turn your CMD window into a digital mood ring. Let’s make your console feel alive!</p>
 
     <h2>🧠 What You’ll Learn</h2>
-    <p>We’ll use the built-in <code>System.Speech</code> library to make your computer speak. You’ll be able to customize greetings, reminders, or even jokes. It’s perfect for kids, coders, or anyone who wants their PC to feel a little more alive.</p>
+    <p>We’ll use the built-in <code>color</code> command in CMD to change the background and text color based on your mood. You’ll create a simple menu that lets you choose your vibe for the day.</p>
 
     <h2>🛠️ Step-by-Step Guide</h2>
-    <p><strong>Step 1:</strong> Open PowerShell (you don’t need admin mode for this one).</p>
-    <p><strong>Step 2:</strong> Paste the code below into the PowerShell window.</p>
+    <p><strong>Step 1:</strong> Open Notepad</p>
+    <p><strong>Step 2:</strong> Paste the code below</p>
+    <p><strong>Step 3:</strong> Save the file as <code>mood.bat</code> (not <code>mood.bat.txt</code>)</p>
 
-But you might be wondering:
-“How do I make it greet me every time I open PowerShell?”
-Let’s turn that one-time script into a permanent companion by saving it to your PowerShell profile.
-</p>
+    <h2>🎨 The CMD Code</h2>
+    <pre><code>
+@echo off
+title Mood-Changing Command Prompt
+:MENU
+cls
+echo ================================
+echo     Choose Your Mood Today
+echo ================================
+echo.
+echo 1. Chill 😎       (Blue + White)
+echo 2. Focused 🔥     (Red + Yellow)
+echo 3. Creative 🌈     (Purple + Aqua)
+echo 4. Mysterious 🕵️  (Black + Green)
+echo 5. Default 🖤      (Reset Colors)
+echo 6. Exit 🚪
+echo.
+set /p mood=Enter your choice (1-6): 
 
-<h2>🧠 Step-by-Step Guide</h2>
-    <p>1. 	Open PowerShell (regular mode is fine).
-2. 	Type this command and press Enter:
-"notepad $PROFILE"
-3. 	If the file doesn’t exist, PowerShell will ask to create it—click Yes.</p>
+if "%mood%"=="1" (
+    color 1F
+    echo Mood set to Chill 😎
+    pause
+    goto MENU
+)
+if "%mood%"=="2" (
+    color 4E
+    echo Mood set to Focused 🔥
+    pause
+    goto MENU
+)
+if "%mood%"=="3" (
+    color D3
+    echo Mood set to Creative 🌈
+    pause
+    goto MENU
+)
+if "%mood%"=="4" (
+    color 0A
+    echo Mood set to Mysterious 🕵️
+    pause
+    goto MENU
+)
+if "%mood%"=="5" (
+    color 07
+    echo Mood reset to Default 🖤
+    pause
+    goto MENU
+)
+if "%mood%"=="6" (
+    echo Goodbye! Stay Tech Savvy 💡
+    exit
+)
 
-<p>
-4.      If your proile is empty just paste the code,save and close notepad,if it's not empty paste the code below the already existing code:
+echo Invalid choice. Please try again.
+pause
+goto MENU    </code></pre>
 
-<pre><code>Add-Type -AssemblyName System.Speech
-$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+    <h2>🎮 What the Colors Mean</h2>
+    <ul>
+      <li><strong>1F</strong> → Blue background, bright white text (Chill)</li>
+      <li><strong>4E</strong> → Red background, yellow text (Focused)</li>
+      <li><strong>D3</strong> → Light purple background, aqua text (Creative)</li>
+      <li><strong>0A</strong> → Black background, green text (Mysterious)</li>
+      <li><strong>07</strong> → Default CMD look (Reset)</li>
+    </ul>
+<p>Change the moods and emojis to what you like.If it glitches, try removing any emojis or non-English characters.If it doesn't display anything,try running <code>Set-ExecutionPolicy RemoteSigned</code> to allow custom scripts.</p>
 
-$speak.Speak("Welcome back to techsavvyp dot com.")
-$speak.Speak("Your next update is scheduled for September 26th, 2025.")
-$speak.Speak("Stay curious, stay creative, and stay tech savvy!")</code></pre>
 
-<p>Just change the <code>$speak.Speak()</code> lines to match your theme!
-If you want,you can add some conditions like:
-
-<pre><code>
-if ((Get-Date).DayOfWeek -eq 'Friday') {
-    $speak.Speak("Happy Friday! Time to wrap up the week.")
-}
-</code></pr>
-</p>
-
-    <h2>🧸 Why It’s Useful</h2>
-    <p>This is a great way to learn about PowerShell objects, libraries, and automation. Plus, it’s fun and easy to share with friends or family. You can even schedule it to run at startup for a daily greeting!</p>
+    <h2>🧸 Why It’s Fun</h2>
+    <p>This project is perfect for beginners who want to explore user input, visual customization, and batch scripting. It’s also a great way to make your daily coding environment feel more personal and expressive.</p>
 
     <h2>🎉 Outro</h2>
-    <p>And there you have it—your very own voice assistant, built with PowerShell and a sprinkle of imagination. Whether you’re coding, learning, or just having fun, this project brings your computer to life in a whole new way.</p>
+    <p>And there you have it—your very own mood-powered command prompt! Whether you’re feeling chill, fiery, or fabulously creative, your terminal now reflects your vibe. Try changing it every day or even matching it to your playlist!</p>
 
-    <p>🗓️ The next Tech Savvy update drops on <strong>September 26th, 2025</strong> (Greek Time). Until then, keep exploring, keep creating, and as always...Stay Tech Savvy!</p>
+    <p>🗓️ The next Tech-Savvy update drops on <strong>September 28th, 2025</strong> (Greek Time). Until then, keep coding, keep customizing, and as always...</p>
 
     <p><strong>Stay Tech Savvy! 💡💬</strong></p>
 
-    <img src="https://cdn.pixabay.com/photo/2019/03/26/10/46/artificial-4082314_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2020/11/24/18/19/cat-5773481_1280.jpg">
   </main>
 
   <footer>
