@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mood-Changing Command Prompt</title>
+  <title>Daily Tech Quote Generator</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -46,119 +46,85 @@
       margin-bottom: 20px;
     }
 
-    code {
+    code, pre {
       background-color: #f0f0f0;
-      padding: 4px 8px;
+      padding: 10px;
       border-radius: 6px;
       font-family: monospace;
+      white-space: pre-wrap;
     }
 
-    .highlight {
-      background-color: #fff3c4;
-      padding: 15px;
-      border-left: 5px solid #f39c12;
-      margin: 30px 0;
+    ul {
+      margin-left: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://cdn.pixabay.com/photo/2015/11/10/08/10/background-1036447_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2024/09/18/05/30/inspirational-9055222_1280.png">
   </header>
 
   <main>
-    <h1>Mood-Changing Command Prompt 🎨</h1>
+    <h1>Daily Tech Quote Generator 💬</h1>
 
-    <p>Welcome back to the <strong>Tech-Savvy Projekt</strong>! Today we’re adding a splash of personality to your Command Prompt. What if your terminal could reflect your mood—chill, focused, creative, or chaotic? With a few lines of code, you can turn your CMD window into a digital mood ring. Let’s make your console feel alive!</p>
+    <p>Welcome to the Tech-Savvy Projekt! Today’s idea is simple, inspiring, and perfect for beginners: a quote generator that delivers a random tech-related message every time you run it. Whether you’re starting your day, teaching kids, or just need a boost, this project adds a spark of positivity to your terminal.</p>
 
     <h2>🧠 What You’ll Learn</h2>
-    <p>We’ll use the built-in <code>color</code> command in CMD to change the background and text color based on your mood. You’ll create a simple menu that lets you choose your vibe for the day.</p>
+    <ul>
+      <li>How to use random selection in CMD and PowerShell</li>
+      <li>How to display motivational quotes in the terminal</li>
+      <li>How to save and run scripts easily</li>
+    </ul>
 
     <h2>🛠️ Step-by-Step Guide</h2>
-    <p><strong>Step 1:</strong> Open Notepad</p>
-    <p><strong>Step 2:</strong> Paste the code below</p>
-    <p><strong>Step 3:</strong> Save the file as <code>mood.bat</code> (not <code>mood.bat.txt</code>)</p>
+    <p><strong>Step 1:</strong> Choose your version—CMD or PowerShell.</p>
+    <p><strong>Step 2:</strong> Open Notepad.</p>
+    <p><strong>Step 3:</strong> Paste the code from your choosen version below.</p>
+    <p><strong>Step 4:</strong> Save the file
+1(CMD).As quotes.bat(make sure it is not quotes.bat.txt)
+2(POWERSHELL).Save it as mquotes.ps1.You ca save both to your Desktop.</p>
+    <p><strong>Step 5:</strong> Run it and enjoy your daily dose of tech wisdom!</p>
 
-    <h2>🎨 The CMD Code</h2>
+    <h2>🖥️ CMD Version (Batch File)</h2>
     <pre><code>
 @echo off
-title Mood-Changing Command Prompt
-:MENU
-cls
-echo ================================
-echo     Choose Your Mood Today
-echo ================================
-echo.
-echo 1. Chill 😎       (Blue + White)
-echo 2. Focused 🔥     (Red + Yellow)
-echo 3. Creative 🌈     (Purple + Aqua)
-echo 4. Mysterious 🕵️  (Black + Green)
-echo 5. Default 🖤      (Reset Colors)
-echo 6. Exit 🚪
-echo.
-set /p mood=Enter your choice (1-6): 
+setlocal enabledelayedexpansion
 
-if "%mood%"=="1" (
-    color 1F
-    echo Mood set to Chill 😎
-    pause
-    goto MENU
-)
-if "%mood%"=="2" (
-    color 4E
-    echo Mood set to Focused 🔥
-    pause
-    goto MENU
-)
-if "%mood%"=="3" (
-    color D3
-    echo Mood set to Creative 🌈
-    pause
-    goto MENU
-)
-if "%mood%"=="4" (
-    color 0A
-    echo Mood set to Mysterious 🕵️
-    pause
-    goto MENU
-)
-if "%mood%"=="5" (
-    color 07
-    echo Mood reset to Default 🖤
-    pause
-    goto MENU
-)
-if "%mood%"=="6" (
-    echo Goodbye! Stay Tech Savvy 💡
-    exit
-)
+set /a pick=%random%%%5
 
-echo Invalid choice. Please try again.
+if !pick!==0 echo "Technology is best when it brings people together. – Matt Mullenweg"
+if !pick!==1 echo "The best way to predict the future is to invent it. – Alan Kay"
+if !pick!==2 echo "Code is like humor. When you have to explain it, it’s bad. – Cory House"
+if !pick!==3 echo "Stay curious. Stay creative. Stay tech savvy!"
+if !pick!==4 echo "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke"
+
 pause
-goto MENU    </code></pre>
+    </code></pre>
 
-    <h2>🎮 What the Colors Mean</h2>
-    <ul>
-      <li><strong>1F</strong> → Blue background, bright white text (Chill)</li>
-      <li><strong>4E</strong> → Red background, yellow text (Focused)</li>
-      <li><strong>D3</strong> → Light purple background, aqua text (Creative)</li>
-      <li><strong>0A</strong> → Black background, green text (Mysterious)</li>
-      <li><strong>07</strong> → Default CMD look (Reset)</li>
-    </ul>
-<p>Change the moods and emojis to what you like.If it glitches, try removing any emojis or non-English characters.If it doesn't display anything,try running <code>Set-ExecutionPolicy RemoteSigned</code> to allow custom scripts.</p>
+    <h2>⚙️ PowerShell Version</h2>
+    <pre><code>
+$quotes = @(
+  "Technology is best when it brings people together. – Matt Mullenweg",
+  "The best way to predict the future is to invent it. – Alan Kay",
+  "Code is like humor. When you have to explain it, it’s bad. – Cory House",
+  "Stay curious. Stay creative. Stay tech savvy!",
+  "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke"
+)
 
+$pick = Get-Random -Minimum 0 -Maximum $quotes.Count
+Write-Host $quotes[$pick]
+    </code></pre>
 
-    <h2>🧸 Why It’s Fun</h2>
-    <p>This project is perfect for beginners who want to explore user input, visual customization, and batch scripting. It’s also a great way to make your daily coding environment feel more personal and expressive.</p>
+  
+    <h2>🎉 Why It’s Fun</h2>
+    <p>This project is perfect for beginners, classrooms, or anyone who wants a little inspiration in their workflow. You can customize the quotes, add emojis, or even turn it into a voice assistant with PowerShell’s speech engine!</p>
 
-    <h2>🎉 Outro</h2>
-    <p>And there you have it—your very own mood-powered command prompt! Whether you’re feeling chill, fiery, or fabulously creative, your terminal now reflects your vibe. Try changing it every day or even matching it to your playlist!</p>
-
-    <p>🗓️ The next Tech-Savvy update drops on <strong>September 28th, 2025</strong> (Greek Time). Until then, keep coding, keep customizing, and as always...</p>
+    <h2>🗓️ What’s Next?</h2>
+    <p>The next Tech-Savvy update drops on <strong>October 1st, 2025</strong> (Greek Time). It’s going to be colorful, creative, and packed with personality—don’t miss it!</p>
 
     <p><strong>Stay Tech Savvy! 💡💬</strong></p>
 
-    <img src="https://cdn.pixabay.com/photo/2020/11/24/18/19/cat-5773481_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2024/09/18/05/30/good-vibes-9055194_1280.png">
   </main>
 
   <footer>
