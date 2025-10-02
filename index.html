@@ -2,133 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Daily Tech Quote Generator</title>
+  <title>Build a Mood Terminal on Mac</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fefefe;
+      background-color: #f4f4f4;
       color: #333;
-      margin: 30px;
-      line-height: 1.8;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
-
     header, footer {
       text-align: center;
-      margin-bottom: 30px;
     }
-
-    main {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      font-size: 2rem;
-    }
-
-    h2 {
-      color: #e67e22;
-      margin-top: 40px;
-    }
-
-    img {
-      max-width: 100%;
+    header img, footer img {
+      width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin: 20px 0;
     }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
     }
-
-    code, pre {
-      background-color: #f0f0f0;
-      padding: 10px;
-      border-radius: 6px;
+    h1 {
+      color: #0077cc;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
       font-family: monospace;
-      white-space: pre-wrap;
     }
-
-    ul {
-      margin-left: 20px;
+    .outro {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #0077cc;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://cdn.pixabay.com/photo/2024/09/18/05/30/inspirational-9055222_1280.png">
-  </header>
 
-  <main>
-    <h1>Daily Tech Quote Generator 💬</h1>
+<header>
+  <img src="https://cdn.pixabay.com/photo/2015/11/10/08/10/background-1036447_1280.jpg" alt="Mood Terminal Header">
+</header>
 
-    <p>Welcome to the Tech-Savvy Projekt! Today’s idea is simple, inspiring, and perfect for beginners: a quote generator that delivers a random tech-related message every time you run it. Whether you’re starting your day, teaching kids, or just need a boost, this project adds a spark of positivity to your terminal.</p>
+<div class="container">
+  <h1>Build a Mood Terminal on Mac 🍎 (and Windows 🖥️) : Color, Sound, and Emoji Vibes!</h1>
 
-    <h2>🧠 What You’ll Learn</h2>
-    <ul>
-      <li>How to use random selection in CMD and PowerShell</li>
-      <li>How to display motivational quotes in the terminal</li>
-      <li>How to save and run scripts easily</li>
-    </ul>
+
+
+  <p>Want your Mac to reflect your mood? This playful project transforms the Terminal into a vibe-matching experience using bash and AppleScript. Whether you're feeling joyful, sleepy, or just need a boost, your Terminal can now respond with colors, sounds, and emojis.</p>
+
+  <h2>🎨 What You’ll Build</h2>
+  <ul>
+    <li>Color themes using ANSI escape codes</li>
+    <li>Voice feedback with <code>say</code> and AppleScript</li>
+    <li>Emoji prompts and ASCII art</li>
+    <li>Gentle reflection questions</li>
+  </ul>
+
+<h2>How to do it:</h2>
+<p>
+<strong>Step 1</strong>  <p>Launch TextEdit</p>
+<strong>Step 2</strong>  <p>Go to Format > Make Plain Text (important!)</p>
+<strong>Step 3</strong>  <p>Go to File > Save</p>
+<strong>Step 4</strong>  <p>Name it: mood_terminal.command</p>
+<strong>Step 5</strong>  <p>Save it to your desktop. Make sure the file format is set to plain text and hit save</p>
+<strong>Step 6</strong>  <p>Open terminal and type:<br><br><pre><code>chmod +x ~/Desktop/mood_terminal.command</code></pre> Make sure to change the path( after ~/ )to wherever the file is located</p>
+<strong>Step 7</strong>  <p>Run it</p>
+
+
+<h2>The magic code>
+
+<pre><code>
+#!/bin/bash
+
+# Mood Terminal for macOS
+clear
+echo "🌈 Welcome to Mood Terminal!"
+echo "Choose your mood:"
+echo "1. 😊 Happy"
+echo "2. 😐 Neutral"
+echo "3. 😢 Sad"
+echo "4. 😠 Angry"
+echo "5. 😴 Sleepy"
+read -p "Enter number (1–5): " mood
+
+# Reset colors
+RESET="\033[0m"
+
+# Define mood actions
+case $mood in
+  1)
+    echo -e "\033[1;33mYou chose HAPPY! 😊\033[0m"
+    say "You're glowing today!"
+    osascript -e 'display notification "Keep smiling!" with title "Mood Terminal"'
+    ;;
+  2)
+    echo -e "\033[1;37mYou chose NEUTRAL 😐\033[0m"
+    say "Just another day. You're doing great."
+    osascript -e 'display notification "Steady and strong." with title "Mood Terminal"'
+    ;;
+  3)
+    echo -e "\033[1;34mYou chose SAD 😢\033[0m"
+    say "It's okay to feel this way."
+    osascript -e 'display notification "Sending virtual hugs 💙" with title "Mood Terminal"'
+    ;;
+  4)
+    echo -e "\033[1;31mYou chose ANGRY 😠\033[0m"
+    say "Take a deep breath. You're powerful."
+    osascript -e 'display notification "Let it out safely." with title "Mood Terminal"'
+    ;;
+  5)
+    echo -e "\033[1;35mYou chose SLEEPY 😴\033[0m"
+    say "Time to recharge. Sweet dreams!"
+    osascript -e 'display notification "Rest is important." with title "Mood Terminal"'
+    ;;
+  *)
+    echo -e "\033[1;30mInvalid choice. Try again.\033[0m"
+    ;;
+esac
+
+echo ""
+echo "📝 Reflection: What made you smile today?"
+echo "💡 Tip: You can edit this script to add your own moods and messages!"
+</code></pre>
+
+  <h2>🧪 Sample Mood Menu</h2>
+  <pre><code>
+echo "Choose your mood:"
+echo "😊 Happy"
+echo "😐 Neutral"
+echo "😢 Sad"
+echo "😠 Angry"
+echo "😴 Sleepy"
+  </code></pre>
+
+  <p>Each mood triggers a unique combo of colors, voice lines, and emoji. For example:</p>
+  <ul>
+    <li><strong>Happy</strong>: Yellow text, cheerful emoji, and “You’re glowing today!”</li>
+    <li><strong>Sad</strong>: Blue tones, gentle voice, and “It’s okay to feel this way.”</li>
+    <li><strong>Sleepy</strong>: Dimmed colors, yawning sound, and “Time to recharge.”</li>
+  </ul>
+<h2>For Windows</h2>
+ <h2>🧠 What You’ll Learn</h2>
+    <p>We’ll use the built-in <code>color</code> command in CMD to change the background and text color based on your mood. You’ll create a simple menu that lets you choose your vibe for the day.</p>
 
     <h2>🛠️ Step-by-Step Guide</h2>
-    <p><strong>Step 1:</strong> Choose your version—CMD or PowerShell.</p>
-    <p><strong>Step 2:</strong> Open Notepad.</p>
-    <p><strong>Step 3:</strong> Paste the code from your choosen version below.</p>
-    <p><strong>Step 4:</strong> Save the file
-1(CMD).As quotes.bat(make sure it is not quotes.bat.txt)
-2(POWERSHELL).Save it as mquotes.ps1.You can save both to your Desktop.</p>
-    <p><strong>Step 5:</strong> Run it and enjoy your daily dose of tech wisdom!</p>
+    <p><strong>Step 1:</strong> Open Notepad</p>
+    <p><strong>Step 2:</strong> Paste the code below</p>
+    <p><strong>Step 3:</strong> Save the file as <code>mood.bat</code> (not <code>mood.bat.txt</code>)</p>
 
-    <h2>🖥️ CMD Version (Batch File)</h2>
+    <h2>🎨 The CMD Code</h2>
     <pre><code>
 @echo off
-setlocal enabledelayedexpansion
+title Mood-Changing Command Prompt
+:MENU
+cls
+echo ================================
+echo     Choose Your Mood Today
+echo ================================
+echo.
+echo 1. Chill 😎       (Blue + White)
+echo 2. Focused 🔥     (Red + Yellow)
+echo 3. Creative 🌈     (Purple + Aqua)
+echo 4. Mysterious 🕵️  (Black + Green)
+echo 5. Default 🖤      (Reset Colors)
+echo 6. Exit 🚪
+echo.
+set /p mood=Enter your choice (1-6): 
 
-set /a pick=%random%%%5
-
-if !pick!==0 echo "Technology is best when it brings people together. – Matt Mullenweg"
-if !pick!==1 echo "The best way to predict the future is to invent it. – Alan Kay"
-if !pick!==2 echo "Code is like humor. When you have to explain it, it’s bad. – Cory House"
-if !pick!==3 echo "Stay curious. Stay creative. Stay tech savvy!"
-if !pick!==4 echo "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke"
-
-pause
-    </code></pre>
-
-    <h2>⚙️ PowerShell Version</h2>
-    <pre><code>
-$quotes = @(
-  "Technology is best when it brings people together. – Matt Mullenweg",
-  "The best way to predict the future is to invent it. – Alan Kay",
-  "Code is like humor. When you have to explain it, it’s bad. – Cory House",
-  "Stay curious. Stay creative. Stay tech savvy!",
-  "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke"
+if "%mood%"=="1" (
+    color 1F
+    echo Mood set to Chill 😎
+    pause
+    goto MENU
+)
+if "%mood%"=="2" (
+    color 4E
+    echo Mood set to Focused 🔥
+    pause
+    goto MENU
+)
+if "%mood%"=="3" (
+    color D3
+    echo Mood set to Creative 🌈
+    pause
+    goto MENU
+)
+if "%mood%"=="4" (
+    color 0A
+    echo Mood set to Mysterious 🕵️
+    pause
+    goto MENU
+)
+if "%mood%"=="5" (
+    color 07
+    echo Mood reset to Default 🖤
+    pause
+    goto MENU
+)
+if "%mood%"=="6" (
+    echo Goodbye! Stay Tech Savvy 💡
+    exit
 )
 
-$pick = Get-Random -Minimum 0 -Maximum $quotes.Count
-Write-Host $quotes[$pick]
-    </code></pre>
+echo Invalid choice. Please try again.
+pause
+goto MENU    </code></pre>
 
-  
-    <h2>🎉 Why It’s Fun</h2>
-    <p>This project is perfect for beginners, classrooms, or anyone who wants a little inspiration in their workflow. You can customize the quotes, add emojis, or even turn it into a voice assistant with PowerShell’s speech engine!</p>
+    <h2>🎮 What the Colors Mean</h2>
+    <ul>
+      <li><strong>1F</strong> → Blue background, bright white text (Chill)</li>
+      <li><strong>4E</strong> → Red background, yellow text (Focused)</li>
+      <li><strong>D3</strong> → Light purple background, aqua text (Creative)</li>
+      <li><strong>0A</strong> → Black background, green text (Mysterious)</li>
+      <li><strong>07</strong> → Default CMD look (Reset)</li>
+    </ul>
+<p>Change the moods and emojis to what you like.If it glitches, try removing any emojis or non-English characters.If it doesn't display anything,try running <code>Set-ExecutionPolicy RemoteSigned</code> to allow custom scripts.</p>
 
-    <h2>🗓️ What’s Next?</h2>
-    <p>The next Tech-Savvy update drops on <strong>October 2nd, 2025</strong> (Greek Time). It’s going to be colorful, creative, and packed with personality—don’t miss it!</p>
 
-    <p><strong>Stay Tech Savvy! 💡💬</strong></p>
+    <h2>🧸 Why It’s Fun</h2>
+    <p>This project is perfect for beginners who want to explore user input, visual customization, and batch scripting. It’s also a great way to make your daily coding environment feel more personal and expressive.</p>
 
-    <img src="https://cdn.pixabay.com/photo/2024/09/18/05/30/good-vibes-9055194_1280.png">
-  </main>
 
-  <footer>
-    <p>Thanks for reading! See you soon 👋</p>
-  </footer>
+  <p><em>Next update drops October 4th with new moods and animations!</em></p>
+
+  <div class="outro">Stay Tech Savvy 💡</div>
+</div>
+
+<footer>
+  <img src="https://cdn.pixabay.com/photo/2020/11/24/18/19/cat-5773481_1280.jpg" alt="Mood Terminal Footer">
+</footer>
+
 </body>
 </html>
