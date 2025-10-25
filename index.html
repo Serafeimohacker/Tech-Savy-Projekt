@@ -1,134 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Local Linux Dev Environments on macOS and Windows</title>
+  <meta charset="UTF-8" />
+  <title>The Haunted Terminal – TechSavvyP</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Courier New', monospace;
+      background-color: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
     }
+
     header, footer {
       text-align: center;
-      background-color: #fff;
-      padding: 20px;
     }
-    img.header, img.footer {
-      max-width: 100%;
-      height: auto;
+
+    header img, footer img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
     }
-    main {
-      padding: 20px;
+
+    .container {
       max-width: 800px;
       margin: auto;
-      background-color: #fff;
+      padding: 2em;
     }
-    h1, h2 {
-      color: #005f99;
-    }
-    code {
-      background-color: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    pre {
-      background-color: #eee;
-      padding: 10px;
-      border-radius: 4px;
-      overflow-x: auto;
-    }
-    .outro {
-      margin-top: 40px;
-      font-weight: bold;
+
+    h1 {
+      color: #ff9900;
       text-align: center;
-      color: #005f99;
+    }
+
+    pre {
+      background-color: #222;
+      color: #0f0;
+      padding: 1em;
+      overflow-x: auto;
+      border-left: 5px solid #ff9900;
+    }
+
+    .outro {
+      margin-top: 3em;
+      text-align: center;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    a {
+      color: #ffcc00;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="https://cdn.pixabay.com/photo/2019/07/14/16/27/pen-4337521_1280.jpg" alt="Header Image" class="header">
-</header>
+  <header>
+    <img src="https://cdn.pixabay.com/photo/2020/10/21/19/43/jack-o-lanterns-5674148_1280.jpg" alt="Halloween header image">
+  </header>
 
-<main>
-  <h1>🧰 Local Linux Dev Environments on macOS🍎 and Windows🖥️</h1>
+  <div class="container">
+    <h1>🎃 The Haunted Terminal</h1>
 
-  <p>Whether you're building classroom apps, testing scripts, or just exploring containers, having a local Linux-like environment makes development smoother. Both macOS and Windows offer powerful tools to run Linux locally—without needing full-blown virtual machines or cloud setups.</p>
+    <p>Here’s a Halloween-themed ASCII story that runs entirely in your terminal—no browser, no internet, just pure spooky fun. It works on both Windows (PowerShell) and Mac/Linux (Bash), and it’s perfect for classrooms or family coding adventures.</p>
 
-  <h2>🍏 Colima on macOS: Lightweight Containers, No Docker Desktop</h2>
-  <p><strong>Colima</strong> (Containers on Lima) is a fast, Docker-compatible container runtime for macOS. It uses Apple’s native virtualization framework and wraps it in a simple CLI, giving you Linux containers without the overhead of Docker Desktop.</p>
+    <h2>🧙‍♂️ PowerShell Version (Windows)</h2>
+    <p>Save this as <code>HauntedTerminal.ps1</code> and run it in PowerShell:</p>
 
-  <h3>🔧 How to Set Up Colima</h3>
-<strong>Step 1</strong>     <p>Open Terminal and run it as administrator</p>
-<strong>step 2</strong>     <p>Paste the command below to your terminal:</p>
-  
-<pre><code>brew install colima
-colima start
-docker run hello-world</code></pre>
-  <p>Colima works seamlessly with the Docker CLI. You can also enable Kubernetes support with:</p>
-  <pre><code>colima start --with-kubernetes</code></pre>
+    <pre>
+function Show-Scene($text) {
+    Write-Host "`n$text"
+    Start-Sleep -Seconds 2
+}
 
-<h3>How to use it</h3>
+Show-Scene "🎃 Welcome to the Haunted Terminal..."
+Show-Scene "It's October 31st. You boot up your computer..."
+Show-Scene "But something feels... off."
 
+Show-Scene @'
+     ___
+   {~._.~}   A pumpkin appears on screen...
+    ( Y )    It blinks.
+   ()~*~()
+   (_)-(_)
+'@
 
-<h2>1.  Start Colima</h2>
-<p>Launch your container runtime:</p>
-<pre><code>colima start</code></pre>
+Show-Scene "Suddenly, the lights flicker. Your terminal types by itself:"
+Show-Scene '"HELLO... I’VE BEEN WAITING."'
 
-<p>You can customize resources (CPU, RAM, disk) like this:
-<pre><code>colima start --cpu 4 --memory 4 --disk 20</code></pre></p>
+Show-Scene @'
+     .-"      "-.
+    /            \   A ghost floats across the screen...
+   |              |
+   |,  .-.  .-.  ,|
+   | )(_o/  \o_)( |
+   |/     /\     \|
+   (_     ^^     _)
+    \__|IIIIII|__/
+     | \IIIIII/ |
+     \          /
+      `--------`
+'@
 
-<h2>2.  Run Docker Commands</h2>
-<p>Colima integrates with Docker CLI, so you can use it just like on Linux:
-<pre><code>docker run hello-world</code></pre></p>
+Show-Scene "You type back: 'Who are you?'"
+Show-Scene '"I AM THE CODE THAT NEVER COMPILED..."'
 
-<p>Try building an image:
-<pre><code>docker build -t my-app </code></pre></p>
+Show-Scene "The ghost laughs. The pumpkin winks. Your terminal glows green."
 
-<p>Or run a container:
-<pre><code>docker run -it ubuntu bash</code></pre></p>
+Show-Scene @'
+   .-''''-.
+  /        \   A vampire face appears...
+ |  O    O  |
+ |    ▄▄    |
+ |  \____/  |
+  \________/
+'@
 
-<h2>3.  Optional: Enable Kubernetes</h2>
-<p>If you want to test Kubernetes locally:
-<pre><code>colima start --with-kubernetes</code></pre></p>
+Show-Scene "You smile. You know what to do."
+Show-Scene "You press ENTER and the haunted terminal fades away..."
+Show-Scene "Until next Halloween 👻"
+    </pre>
 
-<p>Then use kubectl as mentioned before</p>
+    <h2>💻 Bash Version (Mac/Linux)</h2>
+    <p>Save this as <code>haunted_terminal.sh</code> and run it with <code>bash haunted_terminal.sh</code>:</p>
 
-<h2>4. Stop or Restart Colima</h2>
-<p>To stop:
-<pre><codecolima stop</code></pre></p>
+    <pre>
+#!/bin/bash
 
-<p>To restart:
-<pre><code>colima restart</code></pre></p>
+function show_scene() {
+  echo -e "\n$1"
+  sleep 2
+}
 
+show_scene "🎃 Welcome to the Haunted Terminal..."
+show_scene "It's October 31st. You boot up your computer..."
+show_scene "But something feels... off."
 
-  <h1> WSL on Windows🖥️: Native Linux🐧 with a Twist</h1>
-  <p><strong>WSL</strong> (Windows Subsystem for Linux) lets you run a full Linux distro inside Windows—no VM required. It’s perfect for developers who want native Linux tools without leaving Windows.</p>
+show_scene '
+     ___
+   {~._.~}   A pumpkin appears on screen...
+    ( Y )    It blinks.
+   ()~*~()
+   (_)-(_)
+'
 
-  <h3>🔧 How to Set Up WSL</h3>
-  <pre><code>wsl --install</code></pre>
-  <p>This command installs WSL with the default Ubuntu distro. You can also choose other distros like Debian or Kali:</p>
-  <pre><code>wsl --list --online
-wsl --install -d Debian</code></pre>
+show_scene "Suddenly, the lights flicker. Your terminal types by itself:"
+show_scene '"HELLO... I’VE BEEN WAITING."'
 
-  <p>Once installed, launch your Linux shell from the Start menu or Terminal:</p>
-  <pre><code>wsl</code></pre>
+show_scene '
+     .-"      "-.
+    /            \   A ghost floats across the screen...
+   |              |
+   |,  .-.  .-.  ,|
+   | )(_o/  \o_)( |
+   |/     /\     \|
+   (_     ^^     _)
+    \__|IIIIII|__/
+     | \IIIIII/ |
+     \          /
+      `--------`
+'
 
-  <p>WSL supports most Linux tools, package managers, and even GUI apps. It’s tightly integrated with Windows, making file sharing and scripting seamless.</p>
+show_scene "You type back: 'Who are you?'"
+show_scene '"I AM THE CODE THAT NEVER COMPILED..."'
 
-  <div class="outro">Stay tech savvy.</div>
-</main>
+show_scene "The ghost laughs. The pumpkin winks. Your terminal glows green."
 
-<footer>
-  <img src="https://cdn.pixabay.com/photo/2020/03/30/12/42/keys-4984151_1280.jpg" alt="Footer Image" class="footer">
-</footer>
+show_scene '
+   .-''''-.
+  /        \   A vampire face appears...
+ |  O    O  |
+ |    ▄▄    |
+ |  \____/  |
+  \________/
+'
+
+show_scene "You smile. You know what to do."
+show_scene "You press ENTER and the haunted terminal fades away..."
+show_scene "Until next Halloween 👻"
+    </pre>
+
+<button onclick="location.href='archive.html'" style="
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+">
+  🕰️ View Past Pages
+</button>
+
+    <div class="outro">
+      Stay mysterious. Stay creative. Stay tech savvy.
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://cdn.pixabay.com/photo/2020/10/29/17/44/halloween-5696838_1280.jpg" alt="Halloween footer image">
+  </footer>
 
 </body>
 </html>
