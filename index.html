@@ -1,0 +1,250 @@
+<html>
+<head>
+<title>GINGERBREAD RESCUE</title>
+<style>
+
+a {
+  color: #03B9FC;
+}
+
+a, p {
+  color: white;
+}
+
+footer {
+  background-image: url("https://cdn.pixabay.com/photo/2015/12/06/01/02/christmas-baubles-1078996_1280.jpg");
+}
+
+footer, h1 {
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+<img src="https://cdn.pixabay.com/photo/2017/12/12/21/17/doll-figures-3015495_1280.jpg"/>
+</header>
+<main>
+<h1>A CHRISTMAS STORY FOR MAC 🍎 AND WINDOWS 🖥️</h1>
+<p>Today you will learn how to create a Christmas story LOCALLY. But without further ado, let's get started</p>
+
+<h2>MAC EDITION</h2>
+
+<p>Open Terminal and type <pre><code>pwsh</code></pre>.If it is already installed, PowerShell will open,if not, you can always download it by <pre><code>brew install --cask powershell</code></pre>.Once installed type <pre><code>pwsh</code></pre>.When pwsh is installed on your device,close the Terminal.</p>
+<p>First,open TextEdit and <br>
+<a href="#gingerbread-maccode" class="scroll-button">Copy-Paste the Mac-friendly version of the code</a></p>
+<p>Then,save this as: <code>gingerbreadstory.ps1</code>.After,open Terminal and type: <pre><code>pwsh ./gingerbreadstory.ps1</code></pre> to run the file.</p>
+<p>And there you have it,a Mac-friendly Christmas story!</p>
+
+<h2>WINDOWS VERSION</h2>
+<p>First,open Notepad and <a href="#gingerbread-wincode" class="scroll-button">Copy-Paste the Windows-friendly version of the code</a></p>
+<p>Then,save the file as <code>gingerbreadstory.ps1</code> and CD to where you saved it.</p>
+<p>After,just run <pre><code>./gingerbreadstory.ps1</code></pre></p>
+<h5>And there you have it,a Windows-friendly Christmas story</h5>
+
+<section id="gingerbread-maccode">
+  <h2>Mac-friendly code</h2>
+  <p><pre><code>Clear-Host
+
+$width = 80
+$height = 20
+$snowflakes = @()
+1..30 | ForEach-Object {
+    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
+}
+
+# Story frames
+$frames = @()
+
+$frames += @'
+
+'@
+
+$frames += @'
+In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
+a crisis was brewing: the Gingerbread Village had vanished!
+
+Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
+
+Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
+He vowed to find the missing village before Christmas morning.
+'@
+
+$frames += @'
+        🍬🍭🍪
+       /|\
+      /_|_\
+     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
+    /___|___\    shouted Captain Cinnamon.
+       / \
+      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
+     /     \
+'@
+
+$frames += @'
+Through blizzards of powdered sugar and tunnels of toffee, he searched.
+
+At last, in the shadow of the Chocolate Mountains, he found it:
+The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
+
+"Release them!" he cried.
+
+The witch cackled, "Only a true act of Christmas spirit can break the spell!"
+'@
+
+$frames += @'
+Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
+that the globe cracked open with a burst of peppermint light.
+
+The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
+and peace returned to Sugarplum Hollow.
+
+From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
+'@
+
+$frames += @'
++--------------------------------------------------------------------------------+
+|                                                                                |
+|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
+|                                                                                |
+|       May your holidays be magical,full of sweet surprises and joy.            |
++--------------------------------------------------------------------------------+
+'@
+
+# Display loop with snowfall
+foreach ($frame in $frames) {
+    Clear-Host
+
+    # Draw snowflakes
+    for ($line = 0; $line -lt $height; $line++) {
+        $row = ""
+        for ($col = 0; $col -lt $width; $col++) {
+            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $line }) {
+                $row += "*"
+            } else {
+                $row += " "
+            }
+        }
+        Write-Host $row -ForegroundColor Red
+    }
+
+    # Show story frame
+    Write-Host "`n$frame" -ForegroundColor DarkCyan
+
+    # Update snowflake positions
+    $snowflakes = $snowflakes | ForEach-Object {
+        $_.y++
+        if ($_.y -ge $height) {
+            $_.y = 0
+            $_.x = Get-Random -Minimum 0 -Maximum $width
+        }
+        $_
+    }
+
+    Start-Sleep -Seconds 15
+}
+
+# Final countdown display
+Clear-Host
+$now = Get-Date
+$christmas = Get-Date -Year $now.Year -Month 12 -Day 25
+if ($now.Month -eq 12 -and $now.Day -gt 25) {
+    $christmas = $christmas.AddYears(1)
+}
+$timeLeft = $christmas - $now
+Write-Host "`n🎅 Countdown to Christmas: $($timeLeft.Days) days, $($timeLeft.Hours) hours, $($timeLeft.Minutes) minutes, $($timeLeft.Seconds) seconds remaining!" -ForegroundColor Yellow
+</code></pre>
+</p>
+</section>
+
+<section id="gingerbread-wincode">
+  <h2>Windows-friendly code</h2>
+  <p><pre><code>
+Clear-Host
+
+$width = 80
+$height = 20
+$snowflakes = @()
+1..30 | ForEach-Object {
+    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
+}
+
+# Story frames
+$frames = @()
+
+$frames += @'
+
+'@
+
+$frames += @'
+In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
+a crisis was brewing: the Gingerbread Village had vanished!
+
+Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
+
+Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
+He vowed to find the missing village before Christmas morning.
+'@
+
+$frames += @'
+        🍬🍭🍪
+       /|\
+      /_|_\
+     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
+    /___|___\    shouted Captain Cinnamon.
+       / \
+      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
+     /     \
+'@
+
+$frames += @'
+Through blizzards of powdered sugar and tunnels of toffee, he searched.
+
+At last, in the shadow of the Chocolate Mountains, he found it:
+The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
+
+"Release them!" he cried.
+
+The witch cackled, "Only a true act of Christmas spirit can break the spell!"
+'@
+
+$frames += @'
+Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
+that the globe cracked open with a burst of peppermint light.
+
+The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
+and peace returned to Sugarplum Hollow.
+
+From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
+'@
+
+$frames += @'
++--------------------------------------------------------------------------------+
+|                                                                                |
+|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
+|                                                                                |
+|       May your holidays be magical,full of sweet surprises and joy.            |
++--------------------------------------------------------------------------------+
+'@
+
+# Display loop with snowfall
+foreach ($frame in $frames) {
+    Clear-Host
+
+    # Draw snowflakes
+    for ($line = 0; $line -lt $height; $line++) {
+        $row = ""
+        for ($col = 0; $col -lt $width; $col++) {
+            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $
+</code>
+</pre>
+</p>
+</section>
+</main>
+<footer>
+<h1>Merry Christmas!</h1>
+</footer>
+</body>
+</html>
