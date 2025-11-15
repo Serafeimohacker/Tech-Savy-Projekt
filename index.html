@@ -1,205 +1,284 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>The Haunted Terminal – TechSavvyP</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      background-color: #111;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
+<title>GINGERBREAD RESCUE</title>
+<style>
 
-    header, footer {
-      text-align: center;
-    }
+a {
+color;#03B9FC;
+}
 
-    header img, footer img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-    }
+a,p {
+color:white;
+}
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2em;
-    }
+footer {
+background-image: url("https://cdn.pixabay.com/photo/2015/12/06/01/02/christmas-baubles-1078996_1280.jpg");
+}
 
-    h1 {
-      color: #ff9900;
-      text-align: center;
-    }
+footer,h1 {
+color:white;
+}
 
-    pre {
-      background-color: #222;
-      color: #0f0;
-      padding: 1em;
-      overflow-x: auto;
-      border-left: 5px solid #ff9900;
-    }
-
-    .outro {
-      margin-top: 3em;
-      text-align: center;
-      font-style: italic;
-      color: #ccc;
-    }
-
-    a {
-      color: #ffcc00;
-    }
-  </style>
+</style>
 </head>
+
 <body>
+<header>
+<img src="https://cdn.pixabay.com/photo/2017/12/12/21/17/doll-figures-3015495_1280.jpg"/>
+</header>
+<main>
+<h1>A CHRISTMAS STORY FOR MAC 🍎 AND WINDOWS 🖥️</h1>
+<p>Today you will learn how to create a Christmas story LOCALLY. But without further ado, let's get started</p>
 
-  <header>
-    <img src="https://cdn.pixabay.com/photo/2020/10/21/19/43/jack-o-lanterns-5674148_1280.jpg" alt="Halloween header image">
-  </header>
+<h2>MAC EDITION</h2>
 
-  <div class="container">
-    <h1>🎃 The Haunted Terminal</h1>
+<p>Open Terminal and type <pre><code>pwsh</code></pre>.If it is already installed, PowerShell will open,if not, you can always download it by <pre><code>brew install --cask powershell</code></pre>.Once installed type <pre><code>pwsh</code></pre>.When pwsh is installed on your device,close the Terminal.</p>
+<p>First,open TextEdit and <br>
+<a href="#gingerbread-maccode" class="scroll-button">Copy-Paste the Mac-friendly version of the code</a></p>
+<p>Then,save this as: <code>gingerbreadstory.ps1</code>.After,open Terminal and type: <pre><code>pwsh ./GingerbreadRescue.ps1</code></pre> to run the file.</p>
+<p>And there you have it,a Mac-friendly Christmas story!</p>
 
-    <p>Here’s a Halloween-themed ASCII story that runs entirely in your terminal—no browser, no internet, just pure spooky fun. It works on both Windows (PowerShell) and Mac/Linux (Bash), and it’s perfect for classrooms or family coding adventures.</p>
 
-    <h2>🧙‍♂️ PowerShell Version (Windows)</h2>
-    <p>Save this as <code>HauntedTerminal.ps1</code> and run it in PowerShell:</p>
+<h2>WINDOWS VERSION</h2>
+<p>First,open Notepad and <a href="#gingerbread-wincode" class="scroll-button">Copy-Paste the Mac-friendly version of the code</a></p>
+<p>Then,save the file as <code>gingerbreadstory.ps1</code> and CD to where you saved it.</p>
+<p>After,just run <pre><code>./gingerbreadstory.ps1</code></pre></p>
+<h5>And there you have it,a Windows-friendly Christmas story</p>
 
-    <pre>
-function Show-Scene($text) {
-    Write-Host "`n$text"
-    Start-Sleep -Seconds 2
+<section id="gingerbread-maccode">
+  <h2>Mac-friendly code</h2>
+  <p><pre><code>Clear-Host
+
+$width = 80
+$height = 20
+$snowflakes = @()
+1..30 | ForEach-Object {
+    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
 }
 
-Show-Scene "🎃 Welcome to the Haunted Terminal..."
-Show-Scene "It's October 31st. You boot up your computer..."
-Show-Scene "But something feels... off."
+# Story frames
+$frames = @()
 
-Show-Scene @'
-     ___
-   {~._.~}   A pumpkin appears on screen...
-    ( Y )    It blinks.
-   ()~*~()
-   (_)-(_)
+$frames += @'
+
 '@
 
-Show-Scene "Suddenly, the lights flicker. Your terminal types by itself:"
-Show-Scene '"HELLO... I’VE BEEN WAITING."'
+$frames += @'
+In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
+a crisis was brewing: the Gingerbread Village had vanished!
 
-Show-Scene @'
-     .-"      "-.
-    /            \   A ghost floats across the screen...
-   |              |
-   |,  .-.  .-.  ,|
-   | )(_o/  \o_)( |
-   |/     /\     \|
-   (_     ^^     _)
-    \__|IIIIII|__/
-     | \IIIIII/ |
-     \          /
-      `--------`
+Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
+
+Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
+He vowed to find the missing village before Christmas morning.
 '@
 
-Show-Scene "You type back: 'Who are you?'"
-Show-Scene '"I AM THE CODE THAT NEVER COMPILED..."'
-
-Show-Scene "The ghost laughs. The pumpkin winks. Your terminal glows green."
-
-Show-Scene @'
-   .-''''-.
-  /        \   A vampire face appears...
- |  O    O  |
- |    ▄▄    |
- |  \____/  |
-  \________/
+$frames += @'
+        🍬🍭🍪
+       /|\
+      /_|_\
+     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
+    /___|___\    shouted Captain Cinnamon.
+       / \
+      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
+     /     \
 '@
 
-Show-Scene "You smile. You know what to do."
-Show-Scene "You press ENTER and the haunted terminal fades away..."
-Show-Scene "Until next Halloween 👻"
-    </pre>
+$frames += @'
+Through blizzards of powdered sugar and tunnels of toffee, he searched.
 
-    <h2>💻 Bash Version (Mac/Linux)</h2>
-    <p>Save this as <code>haunted_terminal.sh</code> and run it with <code>bash haunted_terminal.sh</code>:</p>
+At last, in the shadow of the Chocolate Mountains, he found it:
+The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
 
-    <pre>
-#!/bin/bash
+"Release them!" he cried.
 
-function show_scene() {
-  echo -e "\n$1"
-  sleep 2
+The witch cackled, "Only a true act of Christmas spirit can break the spell!"
+'@
+
+$frames += @'
+Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
+that the globe cracked open with a burst of peppermint light.
+
+The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
+and peace returned to Sugarplum Hollow.
+
+From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
+'@
+
+$frames += @'
++--------------------------------------------------------------------------------+
+|                                                                                |
+|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
+|                                                                                |
+|       May your holidays be magical,full of sweet surprises and joy.            |
++--------------------------------------------------------------------------------+
+'@
+
+# Display loop with snowfall
+foreach ($frame in $frames) {
+    Clear-Host
+
+    # Draw snowflakes
+    for ($line = 0; $line -lt $height; $line++) {
+        $row = ""
+        for ($col = 0; $col -lt $width; $col++) {
+            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $line }) {
+                $row += "*"
+            } else {
+                $row += " "
+            }
+        }
+        Write-Host $row -ForegroundColor Red
+    }
+
+    # Show story frame
+    Write-Host "`n$frame" -ForegroundColor DarkCyan
+
+    # Update snowflake positions
+    $snowflakes = $snowflakes | ForEach-Object {
+        $_.y++
+        if ($_.y -ge $height) {
+            $_.y = 0
+            $_.x = Get-Random -Minimum 0 -Maximum $width
+        }
+        $_
+    }
+
+    Start-Sleep -Seconds 15
 }
 
-show_scene "🎃 Welcome to the Haunted Terminal..."
-show_scene "It's October 31st. You boot up your computer..."
-show_scene "But something feels... off."
+# Final countdown display
+Clear-Host
+$now = Get-Date
+$christmas = Get-Date -Year $now.Year -Month 12 -Day 25
+if ($now.Month -eq 12 -and $now.Day -gt 25) {
+    $christmas = $christmas.AddYears(1)
+}
+$timeLeft = $christmas - $now
+Write-Host "`n🎅 Countdown to Christmas: $($timeLeft.Days) days, $($timeLeft.Hours) hours, $($timeLeft.Minutes) minutes, $($timeLeft.Seconds) seconds remaining!" -ForegroundColor Yellow
+</code></pre>
+</p>
+</section>
 
-show_scene '
-     ___
-   {~._.~}   A pumpkin appears on screen...
-    ( Y )    It blinks.
-   ()~*~()
-   (_)-(_)
-'
 
-show_scene "Suddenly, the lights flicker. Your terminal types by itself:"
-show_scene '"HELLO... I’VE BEEN WAITING."'
+<section id="gingerbread-wincode">
+  <h2>Windows-friendly code</h2>
+  <p><pre><code>
+Clear-Host
 
-show_scene '
-     .-"      "-.
-    /            \   A ghost floats across the screen...
-   |              |
-   |,  .-.  .-.  ,|
-   | )(_o/  \o_)( |
-   |/     /\     \|
-   (_     ^^     _)
-    \__|IIIIII|__/
-     | \IIIIII/ |
-     \          /
-      `--------`
-'
+$width = 80
+$height = 20
+$snowflakes = @()
+1..30 | ForEach-Object {
+    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
+}
 
-show_scene "You type back: 'Who are you?'"
-show_scene '"I AM THE CODE THAT NEVER COMPILED..."'
+# Story frames
+$frames = @()
 
-show_scene "The ghost laughs. The pumpkin winks. Your terminal glows green."
+$frames += @'
 
-show_scene '
-   .-''''-.
-  /        \   A vampire face appears...
- |  O    O  |
- |    ▄▄    |
- |  \____/  |
-  \________/
-'
+'@
 
-show_scene "You smile. You know what to do."
-show_scene "You press ENTER and the haunted terminal fades away..."
-show_scene "Until next Halloween 👻"
-    </pre>
+$frames += @'
+In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
+a crisis was brewing: the Gingerbread Village had vanished!
 
-<button onclick="location.href='archive.html'" style="
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-">
-  🕰️ View Past Pages
-</button>
+Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
 
-    <div class="outro">
-      Stay mysterious. Stay creative. Stay tech savvy.
-    </div>
-  </div>
+Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
+He vowed to find the missing village before Christmas morning.
+'@
 
-  <footer>
-    <img src="https://cdn.pixabay.com/photo/2020/10/29/17/44/halloween-5696838_1280.jpg" alt="Halloween footer image">
-  </footer>
+$frames += @'
+        🍬🍭🍪
+       /|\
+      /_|_\
+     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
+    /___|___\    shouted Captain Cinnamon.
+       / \
+      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
+     /     \
+'@
 
+$frames += @'
+Through blizzards of powdered sugar and tunnels of toffee, he searched.
+
+At last, in the shadow of the Chocolate Mountains, he found it:
+The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
+
+"Release them!" he cried.
+
+The witch cackled, "Only a true act of Christmas spirit can break the spell!"
+'@
+
+$frames += @'
+Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
+that the globe cracked open with a burst of peppermint light.
+
+The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
+and peace returned to Sugarplum Hollow.
+
+From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
+'@
+
+$frames += @'
++--------------------------------------------------------------------------------+
+|                                                                                |
+|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
+|                                                                                |
+|       May your holidays be magical,full of sweet surprises and joy.            |
++--------------------------------------------------------------------------------+
+'@
+
+# Display loop with snowfall
+foreach ($frame in $frames) {
+    Clear-Host
+
+    # Draw snowflakes
+    for ($line = 0; $line -lt $height; $line++) {
+        $row = ""
+        for ($col = 0; $col -lt $width; $col++) {
+            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $line }) {
+                $row += "*"
+            } else {
+                $row += " "
+            }
+        }
+        Write-Host $row -ForegroundColor Red
+    }
+
+    # Show story frame
+    Write-Host "`n$frame" -ForegroundColor DarkCyan
+
+    # Update snowflake positions
+    $snowflakes = $snowflakes | ForEach-Object {
+        $_.y++
+        if ($_.y -ge $height) {
+            $_.y = 0
+            $_.x = Get-Random -Minimum 0 -Maximum $width
+        }
+        $_
+    }
+
+    Start-Sleep -Seconds 15
+}
+
+# Final countdown display
+Clear-Host
+$now = Get-Date
+$christmas = Get-Date -Year $now.Year -Month 12 -Day 25
+if ($now.Month -eq 12 -and $now.Day -gt 25) {
+    $christmas = $christmas.AddYears(1)
+}
+$timeLeft = $christmas - $now
+Write-Host "`n🎅 Countdown to Christmas: $($timeLeft.Days) days, $($timeLeft.Hours) hours, $($timeLeft.Minutes) minutes, $($timeLeft.Seconds) seconds remaining!" -ForegroundColor Yellow
+</code></pre>
+</p>
+</section>
+</main>
+<footer>
+<h1>Merry Christmas!</h1>
+</footer>
 </body>
 </html>
