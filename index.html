@@ -1,294 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>GINGERBREAD RESCUE</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #fff8f0;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      text-align: center;
-      background: #d62828;
-      padding: 1rem;
-    }
-    header img, footer img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2, h5 {
-      text-align: center;
-      color: #6a040f;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-    p {
-      line-height: 1.6;
-    }
-    code {
-      background: #f1f1f1;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: Consolas, monospace;
-    }
-    pre {
-      background: #f8f9fa;
-      border: 1px solid #ccc;
-      padding: 1rem;
-      overflow-x: auto;
-      border-radius: 6px;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://cdn.pixabay.com/photo/2017/12/12/21/17/doll-figures-3015495_1280.jpg" alt="Christmas Gingerbread Dolls">
-  </header>
+<html>
+    <head>
+        <title>THE TERMINAL THAT WOKE UP</title>
+    </head>
+    <body style="font-weight:bold;">
+        <header>
+            <img src="https://cdn.pixabay.com/photo/2022/12/23/02/32/tree-7673572_1280.jpg"/>
+        </header>
+        <main>
+            <h1>The Terminal That Woke Up By Itself</h1>
+            <h2 class="mw">For Mac🍎 and Windows🖥️ </h2>
+            <p><b>Do you know how to create an ASCII??</b></p>
+            <p>Probably yeah,we have done so many here!But do you know how to create a Christmas ACSII with fireworks that burst and tell you how many days left until Christmas?</p>
+            <p>Probably not,so that is what we are going to do today! Keep in mind that the code will be the same and won't change a little! 🎄🎁❄️ </p>
+            <h2 class="win">For Windows: </h2>
+            <p class="wi">
+            First,Open Notepad and paste <a href="#code" > the code </a>.Then,save the file as <mark>christmasterminal.ps1</mark>.Then just go to Powershell,locate into the folder that you saved the <mark>.ps1</mark> and just type </p>
+            <pre><code>./christmasterminal.ps1</code></pre>
+            <p>And you are ready.<br><br></p>
+            <h2>For Mac: </h2>
+            <p>Open Terminal and type </p>
+            <pre><code>pwsh</code></pre>
+            <p>If pwsh isn't installed on your Mac,type </p>
+            <pre><code>brew install --cask powershell</code></pre>
+            <p>Once installed,open <mark>TextEdit</mark> and paste <a href="#code" > the code </a>.Save it as <mark>christmasterminal.ps1</mark>.Then,open Terminal and type</p>
+            <pre><code>pwsh</code></pre>
+            <p>Locate the folder where you have saved the <mark>.ps1</mark> and type </p>
+            <pre><code>./christmasterminal.ps1</code></pre>
+            <p>And there you have it!A Powershell ACSII for Mac and Windows!</p>
+            <br><br>
+            <p>Stay creative,stay Tech Savvy,Stay Christmass-y!!!</p>
+        </main>
+            <footer>
+                <img src="https://cdn.pixabay.com/photo/2021/12/14/05/08/merry-6869613_1280.png"/>
+                <p id="code"><br></p>
+                <pre><code>
+                    <h2>The code</h2>
+                    Clear-Host
 
-  <main>
-    <h1>A CHRISTMAS STORY FOR MAC 🍎 AND WINDOWS 🖥️</h1>
-    <p>Today you will learn how to create a Christmas story LOCALLY. Without further ado, let's get started!</p>
+# --- CONFIG ---
+$SceneDelay = 10   # seconds per scene
 
-    <section>
-      <h2>🍎 Mac Edition</h2>
-      <p>Open Terminal and type:</p>
-      <pre><code>pwsh</code></pre>
-      <p>If PowerShell is not installed, download it with:</p>
-      <pre><code>brew install --cask powershell</code></pre>
-      <p>Once installed, type <code>pwsh</code> again. Then:</p>
-      <ol>
-        <li>Open TextEdit and copy-paste the Mac-friendly code below.</li>
-        <li>Save the file as <code>gingerbreadstory.ps1</code>.</li>
-        <li>Run it with:</li>
-      </ol>
-      <pre><code>pwsh ./gingerbreadstory.ps1</code></pre>
-      <p>And there you have it — a Mac-friendly Christmas story!</p>
-    </section>
-
-    <section>
-      <h2>🖥️ Windows Version</h2>
-      <p>Open Notepad and copy-paste the Windows code below. Save it as <code>gingerbreadstory.ps1</code>, then navigate to the folder and run:</p>
-      <pre><code>./gingerbreadstory.ps1</code></pre>
-      <h5>And there you have it — a Windows-friendly Christmas story!</h5>
-    </section>
-
-    <h1>🎄 Merry Christmas! 🎅</h1>
-
-    <article>
-      <h2>Mac Version Code</h2>
-      <pre><code>
-Clear-Host
-
-$width = 80
-$height = 20
-$snowflakes = @()
-1..30 | ForEach-Object {
-    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
-}
-
-# Story frames
-$frames = @()
-
-$frames += @'
-
-'@
-
-$frames += @'
-In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
-a crisis was brewing: the Gingerbread Village had vanished!
-
-Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
-
-Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
-He vowed to find the missing village before Christmas morning.
-'@
-
-$frames += @'
-        🍬🍭🍪
-       /|\
-      /_|_\
-     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
-    /___|___\    shouted Captain Cinnamon.
-       / \
-      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
-     /     \
-'@
-
-$frames += @'
-Through blizzards of powdered sugar and tunnels of toffee, he searched.
-
-At last, in the shadow of the Chocolate Mountains, he found it:
-The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
-
-"Release them!" he cried.
-
-The witch cackled, "Only a true act of Christmas spirit can break the spell!"
-'@
-
-$frames += @'
-Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
-that the globe cracked open with a burst of peppermint light.
-
-The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
-and peace returned to Sugarplum Hollow.
-
-From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
-'@
-
-$frames += @'
-+--------------------------------------------------------------------------------+
-|                                                                                |
-|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
-|                                                                                |
-|       May your holidays be magical,full of sweet surprises and joy.            |
-+--------------------------------------------------------------------------------+
-'@
-
-# Display loop with snowfall
-foreach ($frame in $frames) {
+function Scene {
+    param([string[]]$Lines)
     Clear-Host
-
-    # Draw snowflakes
-    for ($line = 0; $line -lt $height; $line++) {
-        $row = ""
-        for ($col = 0; $col -lt $width; $col++) {
-            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $line }) {
-                $row += "*"
-            } else {
-                $row += " "
-            }
-        }
-        Write-Host $row -ForegroundColor Red
+    foreach ($line in $Lines) {
+        Write-Host $line
     }
-
-    # Show story frame
-    Write-Host "`n$frame" -ForegroundColor DarkCyan
-
-    # Update snowflake positions
-    $snowflakes = $snowflakes | ForEach-Object {
-        $_.y++
-        if ($_.y -ge $height) {
-            $_.y = 0
-            $_.x = Get-Random -Minimum 0 -Maximum $width
-        }
-        $_
-    }
-
-    Start-Sleep -Seconds 15
+    Start-Sleep -Seconds $SceneDelay
 }
 
-# Final countdown display
-Clear-Host
-$now = Get-Date
-$christmas = Get-Date -Year $now.Year -Month 12 -Day 25
-if ($now.Month -eq 12 -and $now.Day -gt 25) {
+# --- SCENE 1 ---
+Scene @(
+""
+"   It was Christmas Eve in a quiet office..."
+"   All the monitors slept, humming softly."
+""
+"   But one PowerShell window was still open."
+"   Waiting."
+)
+
+# --- SCENE 2 ---
+Scene @(
+""
+"        ."
+"        ."
+"        ."
+"   A tiny spark blinked in the corner..."
+"   Like a pixel trying to wake up."
+)
+
+# --- SCENE 3 ---
+Scene @(
+"              *"
+"             /#\"
+"            /###\"
+"           /#####\"
+"          /#######\"
+"         /#########\"
+"        /###########\"
+"              ||"
+""
+"   A Christmas tree slowly formed from symbols."
+"   The terminal was dreaming."
+)
+
+# --- SCENE 4 ---
+Scene @(
+"        *"
+"   ( ) /#\  ( )"
+"  (   /###\    )"
+" (   /#####\   )"
+"     /#######\"
+"    /#########\"
+"   /###########\"
+"         ||"
+""
+"   Snowflakes drifted down the screen."
+"   Not real snowflakes—just characters."
+"   But somehow… magical."
+)
+
+# --- SCENE 5 ---
+Scene @(
+"        *"
+"       /#\"
+"      /###\"
+"   * /#####\ *"
+"    /#######\"
+"   /#########\"
+"  *###########*"
+"        ||"
+""
+"   The tree began to glow."
+"   The symbols shimmered like tiny lights."
+)
+
+# --- SCENE 6 ---
+Scene @(
+"   \"Thank you for all the commands,\""
+"   \"the scripts, the fixes, the patience.\""
+""
+"   \"Tonight, even code deserves a little magic.\""
+)
+
+# --- SCENE 7 ---
+Scene @(
+"              *"
+"             /#\"
+"            /###\"
+"           /#####\"
+"      *   /#######\   *"
+"         /#########\"
+"   *    /###########\    *"
+"              ||"
+""
+"   The tree glowed quietly in the dark room."
+"   A tiny Christmas miracle..."
+"   Born inside a PowerShell window."
+)
+
+# --- FINALE: FIREWORKS ---
+$fw1 = @(
+""
+"                ."
+""
+""
+""
+""
+)
+
+$fw2 = @(
+""
+"                ."
+"               . ."
+"                ."
+""
+""
+)
+
+$fw3 = @(
+""
+"               . ."
+"            .   .   ."
+"               . ."
+""
+)
+
+$fw4 = @(
+""
+"            .   .   ."
+"        .     . . .     ."
+"            .   .   ."
+""
+)
+
+$fw5 = @(
+""
+"        *  *  *  *  *  *  *"
+"      *    BOOM!  BOOM!    *"
+"        *  *  *  *  *  *  *"
+""
+)
+
+$fireworks = @($fw1, $fw2, $fw3, $fw4, $fw5)
+
+foreach ($frame in $fireworks) {
+    Clear-Host
+    foreach ($line in $frame) { Write-Host $line }
+    Start-Sleep -Milliseconds 600
+}
+
+Start-Sleep -Seconds 3
+
+$today = Get-Date
+$christmas = Get-Date -Year $today.Year -Month 12 -Day 25
+
+if ($today -gt $christmas) {
     $christmas = $christmas.AddYears(1)
 }
-$timeLeft = $christmas - $now
-Write-Host "`n🎅 Countdown to Christmas: $($timeLeft.Days) days, $($timeLeft.Hours) hours, $($timeLeft.Minutes) minutes, $($timeLeft.Seconds) seconds remaining!" -ForegroundColor Yellow
-      </code></pre>
-    </article>
 
-    <article>
-      <h2>Windows Version Code</h2>
-      <pre><code>
+$daysLeft = ($christmas - $today).Days
+
+Scene @(
+""
+"   🎄 Christmas Countdown 🎄"
+""
+"   There are $daysLeft days until Christmas!"
+""
+"   The terminal smiles softly."
+"   The magic lingers."
+)
+
 Clear-Host
-
-$width = 80
-$height = 20
-$snowflakes = @()
-1..30 | ForEach-Object {
-    $snowflakes += @{ x = Get-Random -Minimum 0 -Maximum $width; y = Get-Random -Minimum 0 -Maximum $height }
-}
-
-# Story frames
-$frames = @()
-
-$frames += @'
-
-'@
-
-$frames += @'
-In Sugarplum Hollow, where candy canes grew like trees and marshmallow snow blanketed the hills,
-a crisis was brewing: the Gingerbread Village had vanished!
-
-Only crumbs remained. The villagers were distraught. Who could have stolen an entire village?
-
-Enter Captain Cinnamon, the bravest cookie in the land, with frosting armor and gumdrop boots.
-He vowed to find the missing village before Christmas morning.
-'@
-
-$frames += @'
-        🍬🍭🍪
-       /|\
-      /_|_\
-     /__|__\     "To the North! The trail of crumbs leads past the Peppermint Peaks!"
-    /___|___\    shouted Captain Cinnamon.
-       / \
-      /   \      He rode his licorice sleigh, pulled by six sugarplum reindeer.
-     /     \
-'@
-
-$frames += @'
-Through blizzards of powdered sugar and tunnels of toffee, he searched.
-
-At last, in the shadow of the Chocolate Mountains, he found it:
-The Gingerbread Village — trapped in a snow globe by the mischievous Ice Cream Witch!
-
-"Release them!" he cried.
-
-The witch cackled, "Only a true act of Christmas spirit can break the spell!"
-'@
-
-$frames += @'
-Captain Cinnamon knelt and sang a carol so sweet, so full of love and hope,
-that the globe cracked open with a burst of peppermint light.
-
-The villagers cheered! Gumdrop lanterns lit the sky. The Ice Cream Witch melted into whipped cream,
-and peace returned to Sugarplum Hollow.
-
-From that day on, the village sang together every Christmas Eve — just in case magic was needed again.
-'@
-
-$frames += @'
-+--------------------------------------------------------------------------------+
-|                                                                                |
-|   * The Gingerbread Rescue became legend — a tale of kindness and song. *      |
-|                                                                                |
-|       May your holidays be magical,full of sweet surprises and joy.            |
-+--------------------------------------------------------------------------------+
-'@
-
-# Display loop with snowfall
-foreach ($frame in $frames) {
-    Clear-Host
-
-    # Draw snowflakes
-    for ($line = 0; $line -lt $height; $line++) {
-        $row = ""
-        for ($col = 0; $col -lt $width; $col++) {
-            if ($snowflakes | Where-Object { $_.x -eq $col -and $_.y -eq $
-
-      </code></pre>
-    </article>
-  </main>
-
-  <footer>
-    <img src="https://cdn.pixabay.com/photo/2015/12/06/01/02/christmas-baubles-1078996_1280.jpg" alt="Christmas Baubles">
-  </footer>
-</body>
+Write-Host ""
+Write-Host "   THE END"
+Write-Host ""
+                </code></pre>
+            </footer>
+    </body>
 </html>
