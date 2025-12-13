@@ -1,0 +1,221 @@
+<html>
+    <head>
+        <title>THE TERMINAL THAT WOKE UP</title>
+    </head>
+    <body style="font-weight:bold;">
+        <header>
+            <img src="https://cdn.pixabay.com/photo/2022/12/23/02/32/tree-7673572_1280.jpg"/>
+        </header>
+        <main>
+            <h1>The Terminal That Woke Up By Itself</h1>
+            <h2 class="mw">For Mac🍎 and Windows🖥️ </h2>
+            <p><b>Do you know how to create an ASCII??</b></p>
+            <p>Probably yeah,we have done so many here!But do you know how to create a Christmas ACSII with fireworks that burst and tell you how many days left until Christmas?</p>
+            <p>Probably not,so that is what we are going to do today! Keep in mind that the code will be the same and won't change a little! 🎄🎁❄️ </p>
+            <h2 class="win">For Windows: </h2>
+            <p class="wi">
+            First,Open Notepad and paste <a href="#code" > the code </a>.Then,save the file as <mark>christmasterminal.ps1</mark>.Then just go to Powershell,locate into the folder that you saved the <mark>.ps1</mark> and just type </p>
+            <pre><code>./christmasterminal.ps1</code></pre>
+            <p>And you are ready.<br><br></p>
+            <h2>For Mac: </h2>
+            <p>Open Terminal and type </p>
+            <pre><code>pwsh</code></pre>
+            <p>If pwsh isn't installed on your Mac,type </p>
+            <pre><code>brew install --cask powershell</code></pre>
+            <p>Once installed,open <mark>TextEdit</mark> and paste <a href="#code" > the code </a>.Save it as <mark>christmasterminal.ps1</mark>.Then,open Terminal and type</p>
+            <pre><code>pwsh</code></pre>
+            <p>Locate the folder where you have saved the <mark>.ps1</mark> and type </p>
+            <pre><code>./christmasterminal.ps1</code></pre>
+            <p>And there you have it!A Powershell ACSII for Mac and Windows!</p>
+            <br><br>
+            <p>Stay creative,stay Tech Savvy,Stay Christmass-y!!!</p>
+        </main>
+            <footer>
+                <img src="https://cdn.pixabay.com/photo/2021/12/14/05/08/merry-6869613_1280.png"/>
+                <p id="code"><br></p>
+                <pre><code>
+                    <h2>The code</h2>
+                    Clear-Host
+
+# --- CONFIG ---
+$SceneDelay = 10   # seconds per scene
+
+function Scene {
+    param([string[]]$Lines)
+    Clear-Host
+    foreach ($line in $Lines) {
+        Write-Host $line
+    }
+    Start-Sleep -Seconds $SceneDelay
+}
+
+# --- SCENE 1 ---
+Scene @(
+""
+"   It was Christmas Eve in a quiet office..."
+"   All the monitors slept, humming softly."
+""
+"   But one PowerShell window was still open."
+"   Waiting."
+)
+
+# --- SCENE 2 ---
+Scene @(
+""
+"        ."
+"        ."
+"        ."
+"   A tiny spark blinked in the corner..."
+"   Like a pixel trying to wake up."
+)
+
+# --- SCENE 3 ---
+Scene @(
+"              *"
+"             /#\"
+"            /###\"
+"           /#####\"
+"          /#######\"
+"         /#########\"
+"        /###########\"
+"              ||"
+""
+"   A Christmas tree slowly formed from symbols."
+"   The terminal was dreaming."
+)
+
+# --- SCENE 4 ---
+Scene @(
+"        *"
+"   ( ) /#\  ( )"
+"  (   /###\    )"
+" (   /#####\   )"
+"     /#######\"
+"    /#########\"
+"   /###########\"
+"         ||"
+""
+"   Snowflakes drifted down the screen."
+"   Not real snowflakes—just characters."
+"   But somehow… magical."
+)
+
+# --- SCENE 5 ---
+Scene @(
+"        *"
+"       /#\"
+"      /###\"
+"   * /#####\ *"
+"    /#######\"
+"   /#########\"
+"  *###########*"
+"        ||"
+""
+"   The tree began to glow."
+"   The symbols shimmered like tiny lights."
+)
+
+# --- SCENE 6 ---
+Scene @(
+"   \"Thank you for all the commands,\""
+"   \"the scripts, the fixes, the patience.\""
+""
+"   \"Tonight, even code deserves a little magic.\""
+)
+
+# --- SCENE 7 ---
+Scene @(
+"              *"
+"             /#\"
+"            /###\"
+"           /#####\"
+"      *   /#######\   *"
+"         /#########\"
+"   *    /###########\    *"
+"              ||"
+""
+"   The tree glowed quietly in the dark room."
+"   A tiny Christmas miracle..."
+"   Born inside a PowerShell window."
+)
+
+# --- FINALE: FIREWORKS ---
+$fw1 = @(
+""
+"                ."
+""
+""
+""
+""
+)
+
+$fw2 = @(
+""
+"                ."
+"               . ."
+"                ."
+""
+""
+)
+
+$fw3 = @(
+""
+"               . ."
+"            .   .   ."
+"               . ."
+""
+)
+
+$fw4 = @(
+""
+"            .   .   ."
+"        .     . . .     ."
+"            .   .   ."
+""
+)
+
+$fw5 = @(
+""
+"        *  *  *  *  *  *  *"
+"      *    BOOM!  BOOM!    *"
+"        *  *  *  *  *  *  *"
+""
+)
+
+$fireworks = @($fw1, $fw2, $fw3, $fw4, $fw5)
+
+foreach ($frame in $fireworks) {
+    Clear-Host
+    foreach ($line in $frame) { Write-Host $line }
+    Start-Sleep -Milliseconds 600
+}
+
+Start-Sleep -Seconds 3
+
+$today = Get-Date
+$christmas = Get-Date -Year $today.Year -Month 12 -Day 25
+
+if ($today -gt $christmas) {
+    $christmas = $christmas.AddYears(1)
+}
+
+$daysLeft = ($christmas - $today).Days
+
+Scene @(
+""
+"   🎄 Christmas Countdown 🎄"
+""
+"   There are $daysLeft days until Christmas!"
+""
+"   The terminal smiles softly."
+"   The magic lingers."
+)
+
+Clear-Host
+Write-Host ""
+Write-Host "   THE END"
+Write-Host ""
+                </code></pre>
+            </footer>
+    </body>
+</html>
