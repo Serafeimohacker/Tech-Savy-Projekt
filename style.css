@@ -25,9 +25,6 @@ p {
     font-size: 25px;
 }
 
-a:visited {
-    color: rgb(221, 43, 43);
-}
 
 a:hover {
     color: rgb(221, 43, 43);
@@ -87,6 +84,7 @@ body::before {
   border-radius: 8px;
   border:6px solid #4169E1;
 }
+
 
 
 
