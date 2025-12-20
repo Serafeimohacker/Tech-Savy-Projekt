@@ -1,9 +1,10 @@
 body {
 background-image:linear-gradient(to bottom,#0CC7DB,#FFFFFF)
+  line-height:5px;
 }
 
 a {
-background-color: #0077cc;
+  background-color: #0077cc;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -19,3 +20,4 @@ a:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
 }
+
