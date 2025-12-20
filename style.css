@@ -82,5 +82,15 @@ footer img {
   object-fit: cover;
 }
 
+.pu {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+
 
 
