@@ -76,20 +76,18 @@ body::before {
     z-index: -1;
 }
 
-footer img {
-  width: 100vw; 
-  height: 100dvh;
-  object-fit: cover;
-}
 
 .pu {
   background-color: #0077cc;
   color: white;
-  border: none;
+  width: 280px;
+  height: 100px;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 8px;
+  border:6px solid royalblue;
 }
+
 
 
 
