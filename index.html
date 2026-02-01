@@ -1,255 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>THE TERMINAL THAT WOKE UP</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="icon" type="image/png" href="/favimage.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Dkw2C5DkKMAlMXqO983H2MqlBTeh1mdZGxu5Zx7KpKw" />
+    <title>10 Computer Tips | TechSavvyP</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-mark: #fef08a; /* Highlighting color */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header, footer {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        header img, footer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        main {
+            max-width: 850px;
+            background: white;
+            padding: 50px;
+            margin: -80px 20px 50px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        mark {
+            background-color: var(--accent-mark);
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .tip-card {
+            background: #f8fafc;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 6px solid var(--primary-color);
+            border-radius: 0 12px 12px 0;
+            transition: transform 0.2s;
+        }
+
+        .tip-card:hover {
+            transform: translateX(5px);
+        }
+
+        .tip-title {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 12px;
+        }
+
+        .fix-box {
+            background: #eff6ff;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .newsletter, .pu {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .secondary-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .festive {
+            text-align: center;
+            font-style: italic;
+            color: #dc2626;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
-<body style="font-weight:bold;">
+<body>
 
 <header>
-    <img src="https://cdn.pixabay.com/photo/2022/12/23/02/32/tree-7673572_1280.jpg"/>
+    <img src="https://cdn.pixabay.com" alt="Businessman Working"/>
 </header>
 
 <main>
-    <h1>The Terminal That Woke Up By Itself</h1>
-    <h2 class="mw">For Mac🍎 and Windows🖥️</h2>
+    <h1>The <mark>Best 10 Tips</mark> to Increase Your PC's Life</h1>
 
-    <p><b>Do you know how to create an ASCII??</b></p>
-    <p>Probably yeah, we have done so many here! But do you know how to create a Christmas ASCII with fireworks that burst and tell you how many days left until Christmas?</p>
-    <p>Probably not, so that is what we are going to do today! Keep in mind that the code will be the same and won't change a little! 🎄🎁❄️</p>
-
-    <h2 class="win">For Windows:</h2>
-    <p class="wi">
-        First, open Notepad and paste <a href="#code">the code</a>.
-        Then save the file as <mark>christmasterminal.ps1</mark>.
-        Then open PowerShell, locate the folder where you saved the <mark>.ps1</mark>, and type:
+    <p style="text-align:center; font-size: 1.15rem; color: #475569;">
+        Let’s be real! Our habits can sometimes decrease the health of our computer. 
+        Today, the <strong>TechSavvyP</strong> Team will help you fix those habits for both Mac and Windows!
     </p>
 
-    <pre><code>./christmasterminal.ps1</code></pre>
-
-    <h2>For Mac:</h2>
-    <p>Open Terminal and type:</p>
-    <pre><code>pwsh</code></pre>
-
-    <p>If pwsh isn't installed on your Mac, type:</p>
-    <pre><code>brew install --cask powershell</code></pre>
-
-    <p>
-        Once installed, open <mark>TextEdit</mark> and paste
-        <a href="#code">the code</a>. Save it as <mark>christmasterminal.ps1</mark>.
-        Then open Terminal and type:
-    </p>
-
-    <pre><code>pwsh</code></pre>
-
-    <p>Locate the folder where you saved the <mark>.ps1</mark> and type:</p>
-    <pre><code>./christmasterminal.ps1</code></pre>
-
-    <p>And there you have it! A PowerShell ASCII for Mac and Windows!</p>
-    <div class="newsletter">
-    <a href="https://forms.gle/dQgRhapVA96FTF5i7">Click Here To Subscribe To Our Newsletter!</a>
+    <!-- Tip 1 -->
+    <div class="tip-card">
+        <span class="tip-title">1. Clear Out "The Silent Killer"</span>
+        <p><mark>Dust acts as an insulator, trapping heat inside your components.</mark> If your fans are constantly ramping up, your computer is struggling to breathe.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Use a can of Compressed Air to blow out the vents every 6 months to prevent "thermal degradation."</div>
     </div>
-    <br><br>
-    <p>Stay creative, stay Tech Savvy, stay Christmass-y!!!</p>
+
+    <!-- Tip 2 -->
+    <div class="tip-card">
+        <span class="tip-title">2. Follow the 20-80 Battery Rule</span>
+        <p>Lithium-ion batteries are chemically stressed when they sit at 0% or 100% for too long.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Keep your laptop charge between <mark>20% and 80%</mark>. Use "Optimized Battery Charging" on Mac or threshold tools on Windows.</div>
+    </div>
+
+    <!-- Tip 3 -->
+    <div class="tip-card">
+        <span class="tip-title">3. Avoid Soft Surfaces</span>
+        <p>Using your laptop on a bed or carpet acts like a blanket, suffocating the intake vents and "cooking" the internal chips.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Always use a hard, flat surface or a <mark>Laptop Stand</mark>.</div>
+    </div>
+
+    <!-- Tip 4 -->
+    <div class="tip-card">
+        <span class="tip-title">4. Use a Surge Protector</span>
+        <p>A simple power spike during a storm can fry your Motherboard instantly.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Ensure you are plugged into a dedicated Surge Protector, <mark>not just a basic power strip</mark>.</div>
+    </div>
+
+    <!-- Tip 5 -->
+    <div class="tip-card">
+        <span class="tip-title">5. Keep Storage Below 85%</span>
+        <p>SSDs need "breathing room" for wear leveling. A full drive wears out faster and slows down significantly.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Keep at least <mark>15-20% of your drive empty</mark> to extend the SSD's life.</div>
+    </div>
+
+    <!-- Tip 6 -->
+    <div class="tip-card">
+        <span class="tip-title">6. Restart Every Few Days</span>
+        <p>"Sleep mode" is convenient, but it doesn't clear the system cache or stop minor software glitches.</p>
+        <div class="fix-box"><strong>The Fix:</strong> A full restart every <mark>48–72 hours</mark> flushes the RAM and resets the hardware.</div>
+    </div>
+
+    <!-- Tip 7 -->
+    <div class="tip-card">
+        <span class="tip-title">7. Open the Lid from the Center</span>
+        <p>Opening a laptop by the corner puts uneven torque on the hinges and can crack the screen.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Always lift the lid <mark>from the center</mark> to prevent physical damage.</div>
+    </div>
+
+    <!-- Tip 8 -->
+    <div class="tip-card">
+        <span class="tip-title">8. Don't Skip OS Updates</span>
+        <p>Updates often include firmware that optimizes how your fans spin or how your CPU handles power.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Keep your <mark>Software Update</mark> current to ensure hardware efficiency.</div>
+    </div>
+
+    <!-- Tip 9 -->
+    <div class="tip-card">
+        <span class="tip-title">9. Mind the Ambient Temperature</span>
+        <p>Heat kills batteries, and extreme cold can cause condensation inside the chassis.</p>
+        <div class="fix-box"><strong>The Fix:</strong> <mark>Never leave your laptop in a car</mark>. Aim for environments between 50°F and 95°F.</div>
+    </div>
+
+    <!-- Tip 10 -->
+    <div class="tip-card">
+        <span class="tip-title">10. Clean the Screen Correctly</span>
+        <p>Harsh chemicals like Windex can strip the protective coatings off modern displays.</p>
+        <div class="fix-box"><strong>The Fix:</strong> Use only a <mark>dry microfiber cloth</mark>. Use distilled water only if absolutely necessary.</div>
+    </div>
+
+    <p style="text-align:center; font-weight:bold; font-size: 1.3rem; margin-top: 40px;">
+        And there you have it! How to <mark>NOT</mark> kill your PC!
+    </p>
+
+    <div class="newsletter">
+        <a href="https://forms.gle" class="btn">Subscribe To Our Newsletter!</a>
+    </div>
+
+    <p class="festive">Stay creative, stay Tech Savvy, stay Christmass-y!!!</p>
 
     <div class="pu">
-        <a href="/more/index.html">Previous Uploads</a>
+        <a href="/more/index.html" class="secondary-link">← View Previous Uploads</a>
     </div>
 </main>
 
 <footer>
-    <p id="code"><br></p>
-    <h2>The code</h2>
-
-    <pre><code>
-Clear-Host
-
-# --- CONFIG ---
-$SceneDelay = 10   # seconds per scene
-
-function Scene {
-    param([string[]]$Lines)
-    Clear-Host
-    foreach ($line in $Lines) {
-        Write-Host $line
-    }
-    Start-Sleep -Seconds $SceneDelay
-}
-
-# --- SCENE 1 ---
-Scene @(
-''
-'   It was Christmas Eve in a quiet office...'
-'   All the monitors slept, humming softly.'
-''
-'   But one PowerShell window was still open.'
-'   Waiting.'
-)
-
-# --- SCENE 2 ---
-Scene @(
-''
-'        .'
-'        .'
-'        .'
-'   A tiny spark blinked in the corner...'
-'   Like a pixel trying to wake up.'
-)
-
-# --- SCENE 3 ---
-Scene @(
-'              *'
-'             /#\'
-'            /###\'
-'           /#####\'
-'          /#######\'
-'         /#########\'
-'        /###########\'
-'              ||'
-''
-'   A Christmas tree slowly formed from symbols.'
-'   The terminal was dreaming.'
-)
-
-# --- SCENE 4 ---
-Scene @(
-'        *'
-'   ( ) /#\  ( )'
-'  (   /###\    )'
-' (   /#####\   )'
-'     /#######\'
-'    /#########\'
-'   /###########\'
-'         ||'
-''
-'   Snowflakes drifted down the screen.'
-'   Not real snowflakes—just characters.'
-'   But somehow… magical.'
-)
-
-# --- SCENE 5 ---
-Scene @(
-'        *'
-'       /#\'
-'      /###\'
-'   * /#####\ *'
-'    /#######\'
-'   /#########\'
-'  *###########*'
-'        ||'
-''
-'   The tree began to glow.'
-'   The symbols shimmered like tiny lights.'
-)
-
-# --- SCENE 6 ---
-Scene @(
-'   "Thank you for all the commands,"'
-'   "the scripts, the fixes, the patience."'
-''
-'   "Tonight, even code deserves a little magic."'
-)
-
-# --- SCENE 7 ---
-Scene @(
-'              *'
-'             /#\'
-'            /###\'
-'           /#####\'
-'      *   /#######\   *'
-'         /#########\'
-'   *    /###########\    *'
-'              ||'
-''
-'   The tree glowed quietly in the dark room.'
-'   A tiny Christmas miracle...'
-'   Born inside a PowerShell window.'
-)
-
-# --- FINALE: FIREWORKS ---
-$fw1 = @(
-''
-'                .'
-''
-''
-''
-''
-)
-
-$fw2 = @(
-''
-'                .'
-'               . .'
-'                .'
-''
-''
-)
-
-$fw3 = @(
-''
-'               . .'
-'            .   .   .'
-'               . .'
-''
-)
-
-$fw4 = @(
-''
-'            .   .   .'
-'        .     . . .     .'
-'            .   .   .'
-''
-)
-
-$fw5 = @(
-''
-'        *  *  *  *  *  *  *'
-'      *    BOOM!  BOOM!    *'
-'        *  *  *  *  *  *  *'
-''
-)
-
-$fireworks = @($fw1, $fw2, $fw3, $fw4, $fw5)
-
-foreach ($frame in $fireworks) {
-    Clear-Host
-    foreach ($line in $frame) { Write-Host $line }
-    Start-Sleep -Milliseconds 600
-}
-
-Start-Sleep -Seconds 3
-
-$today = Get-Date
-$christmas = Get-Date -Year $today.Year -Month 12 -Day 25
-
-if ($today -gt $christmas) {
-    $christmas = $christmas.AddYears(1)
-}
-
-$daysLeft = ($christmas - $today).Days
-
-Scene @(
-''
-'   🎄 Christmas Countdown 🎄'
-''
-"   There are $daysLeft days until Christmas!"
-''
-'   The terminal smiles softly.'
-'   The magic lingers.'
-)
-
-Clear-Host
-Write-Host ''
-Write-Host '   THE END'
-Write-Host ''
-    </code></pre>
+    <img src="https://cdn.pixabay.com" alt="Laptop Workspace"/>
 </footer>
 
 </body>
 </html>
-
-
-
-
