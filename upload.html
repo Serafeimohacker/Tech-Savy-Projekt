@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Dkw2C5DkKMAlMXqO983H2MqlBTeh1mdZGxu5Zx7KpKw" />
+    <title>Minecraft Murder Mystery | TechSavvyP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #4179E1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header, footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header img, footer img {
+            max-width: 200px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+        }
+
+        main {
+            max-width: 800px;
+            width: 90%;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Styling the table into a clean list */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            margin-top: 30px;
+        }
+
+        tr {
+            background: rgba(255,255,255,0.03);
+            transition: transform 0.2s ease;
+        }
+
+        tr:hover {
+            transform: translateX(10px);
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* Step Label Style */
+        td:first-child {
+            padding: 15px 20px;
+            font-weight: bold;
+            color: var(--accent);
+            border-radius: 10px 0 0 10px;
+            width: 100px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* Instruction Style */
+        td:last-child {
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Header row of table */
+        tr:first-child {
+            background: transparent;
+            font-weight: 800;
+        }
+        
+        tr:first-child:hover { transform: none; }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .download-section img {
+            transition: transform 0.3s ease;
+            max-width: 250px;
+        }
+
+        .download-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .newsletter, .pu {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .festive {
+            text-align: center;
+            font-style: italic;
+            color: #ef4444; /* Brighter red for dark mode */
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        .secondary-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .secondary-link:hover {
+            color: white;
+        }
+
+        b { color: white; }
+
+        @media (max-width: 600px) {
+            main { padding: 20px; }
+            h1 { font-size: 1.6rem; }
+            td { display: block; width: 100% !important; }
+            td:first-child { border-radius: 10px 10px 0 0; padding-bottom: 5px; }
+            td:last-child { border-radius: 0 0 10px 10px; padding-top: 5px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="https://cdn.pixabay.com/photo/2015/12/23/22/36/minecraft-1106253_1280.png" alt="Minecraft Logo"/>
+</header>
+
+<main>
+    <h1>Murder Mystery Minecraft World</h1>
+    <p>Have you ever played a Minecraft Murder Mystery World?<br>We offer a free-to-play world for Java Edition. Provided as a <b>.zip</b> file for full transparency and security.</p>
+    
+    <div class="steps">
+        <table>
+            <tr>
+                <td>Step</td>
+                <td>Instructions</td>
+            </tr>
+            <tr>
+                <td>Step 1</td>
+                <td>Un-zip the Minecraft Folder that you downloaded from us.</td>
+            </tr>
+            <tr>
+                <td>Step 2</td>
+                <td>Copy the un-zipped folder.</td>
+            </tr>
+            <tr>
+                <td>Step 3</td>
+                <td>Locate your <b>.minecraft</b> folder (C:/users/yourusername/AppData/.minecraft). Note: "Show Hidden Files" must be enabled.</td>
+            </tr>
+            <tr>
+                <td>Step 4</td>
+                <td>Go into your <b>saves</b> folder.</td>
+            </tr>
+            <tr>
+                <td>Step 5</td>
+                <td>Paste the folder there. Launch Minecraft: Java Edition and enjoy!</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="download-section">
+        <a href="https://github.com/Serafeimohacker/Tech-Savy-Projekt/releases/download/murdermystery/Murder_Mystery.Java.zip">
+            <img src="https://techsavvyp.com/Group%202.png" alt="Download Now"/>
+        </a>
+    </div>
+
+    <div class="newsletter">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwCBYH7C34v5MoXMetPYjUA_Oz8qxkPqk1l2O9lpG5ZIbAKQ/viewform?usp=header" class="btn">Subscribe To Our Newsletter</a>
+    </div>
+
+    <p class="festive">Stay creative, stay Tech Savvy, stay Minecraft-y!!!</p>
+
+    <div class="pu">
+        <a href="/more/index.html" class="secondary-link">← View Previous Uploads</a>
+    </div>
+</main>
+
+<footer>
+    <img src="https://cdn.pixabay.com/photo/2015/12/23/22/39/minecraft-1106261_1280.png" alt="Minecraft Footer"/>
+</footer>
+
+<script src="valentine.js"></script>
+
+</body>
+</html>
